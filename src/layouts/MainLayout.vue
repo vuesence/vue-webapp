@@ -4,9 +4,10 @@ import TouchSlideout from "@/components/TouchSlideout.vue";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
-import { useAppConfig } from "@/composables/useAppConfig";
 
-const { isDrawerOpen } = useAppConfig();
+// import { useAppConfig } from "@/composables/useAppConfig";
+
+// const { isDrawerOpen } = useAppConfig();
 
 // const drawerStatus = ref(true);
 // function toggleDrawer() {

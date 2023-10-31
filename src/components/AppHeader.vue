@@ -16,6 +16,7 @@
   height: 2em;
   padding: 15px 20px;
   background-color: #eee;
+  z-index: 3;
   .title {
     font-size: 1.5em;
   }
