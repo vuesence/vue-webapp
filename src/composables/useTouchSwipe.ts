@@ -56,7 +56,7 @@ export interface ISwipeReturn {
  * @param target
  * @param options
  */
-export function useSwipe(
+export function useTouchSwipe(
   // target: MaybeRefOrGetter<EventTarget | null | undefined>,
   target: EventTarget,
   options: ISwipeOptions = {},

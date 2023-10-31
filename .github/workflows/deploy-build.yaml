@@ -1,0 +1,33 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    # branches: [ "main", "development" ]
+permissions:
+  contents: write
+  # pages: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 8.5.0
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - run: pnpm build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages

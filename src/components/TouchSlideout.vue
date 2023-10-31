@@ -1,29 +1,40 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from "vue";
-import { useSwipe } from "@/composables/useSwipe";
+import { computed, onMounted, onUnmounted, ref, watch } from "vue";
+import { useTouchSwipe } from "@/composables/useTouchSwipe";
+import { useAppConfig } from "@/composables/useAppConfig";
 
-const isOpen = defineModel<boolean>();
+const { isDrawerOpen } = useAppConfig();
 
-console.log("isOpen", isOpen.value);
+// const isDrawerOpen = defineModel<boolean>();
+
+console.log("setup - isDrawerOpen", isDrawerOpen.value);
 
 const {
   isSwiping,
   coordsStart,
   coordsEnd,
   stop,
-} = useSwipe(
+} = useTouchSwipe(
   document.body,
   { onSwipe, onSwipeEnd, onSwipeStart },
 );
 
-// watch((isSwiping) => {
-//   console.log("isOpen", isOpen.value);
+watch(isDrawerOpen, () => {
+  console.log("isDrawerOpen", isDrawerOpen.value);
+  if (isDrawerOpen.value) {
+    open();
+  } else {
+    close();
+  }
+});
+
+// watch((isDrawerOpen) => {
+//   console.log("isDrawerOpen", isDrawerOpen.value);
 // });
 
 const touchSlideout = ref();
 const touchSlideoutWrapper = ref();
 const overlay = ref();
-// const isOpen = ref(true);
 const viewportWidth = ref(window.innerWidth);
 
 // let viewportWidth = window.innerWidth;
@@ -66,45 +77,64 @@ function initStyles() {
   overlay.value.style.transitionDuration = "0s";
   console.log("closing");
 
-  close();
+  // close();
 }
 
 function overlayClick(event) {
+  const x = touchSlideout.value.getBoundingClientRect().left;
+  if (!isDrawerOpen.value && x < -100) {
+    return;
+  }
   event.stopPropagation();
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
-  const x = touchSlideout.value.getBoundingClientRect().left;
+  console.log("x", x);
+  console.log("event.clientX", event.clientX);
   if (event.clientX > x + maxDrawerWidth.value) {
-    close();
+    // close();
+    isDrawerOpen.value = false;
   }
 }
 
 function open() {
+  overlay.value.style.transitionDuration = `${config.transitionDuration}s`;
+  touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   overlay.value.style.opacity = config.maxOverlayOpacity;
   touchSlideout.value.style.width = `${viewportWidth.value}px`;
   touchSlideout.value.style.transform = "translateX(0px)";
-  isOpen.value = true;
+  // isDrawerOpen.value = true;
 }
 function close() {
+  // debugger;
   overlay.value.style.opacity = 0;
   touchSlideout.value.style.width = `${touchSlideoutWidth}px`;
   touchSlideout.value.style.transform = `translateX(${-maxDrawerWidth.value}px)`;
-  isOpen.value = false;
+  setTimeout(() => {
+    overlay.value.style.display = "none";
+  }, 500);
+
+  // isDrawerOpen.value = false;
 }
 
 function onSwipe(event) {
+  if (!isDrawerOpen.value && coordsStart.x > 100) {
+    return;
+  }
   const touchMovePosition = event.changedTouches[0].clientX;
   let touchSlideoutCurrentLeft = touchSlideoutStartLeft + (touchMovePosition - coordsStart.x);
 
   if (touchSlideoutCurrentLeft <= 0) {
     // swipe touchmove < maxDrawerWidth
     if (coordsStart.x > maxDrawerWidth.value) {
-      // if isOpened and touchstart over elSub
+      // if isDrawerOpened and touchstart over elSub
       touchSlideoutCurrentLeft = touchSlideoutCurrentLeft + (coordsStart.x - maxDrawerWidth.value);
     }
     if (touchMovePosition <= maxDrawerWidth.value) {
       touchSlideout.value.style.transform = `translateX(${touchSlideoutCurrentLeft}px)`;
     }
     const overlayOpacity = touchMovePosition / maxDrawerWidth.value;
+    if (overlayOpacity > 0.05) {
+      overlay.value.style.display = "initial";
+    }
     if (overlayOpacity > 0 && overlayOpacity < 1) {
       overlay.value.style.opacity = Math.min(overlayOpacity, config.maxOverlayOpacity);
       // console.log("overlayOpacity", overlay.value.style.opacity);
@@ -112,6 +142,9 @@ function onSwipe(event) {
   }
 }
 function onSwipeStart() {
+  if (!isDrawerOpen.value && coordsStart.x > 100) {
+    return;
+  }
   touchSlideout.value.style.transitionDuration = "0s";
   overlay.value.style.transitionDuration = "0s";
   // overlay.value.style.zIndex = 999;
@@ -119,33 +152,42 @@ function onSwipeStart() {
   // touchMoveStart = coordsStart.x;
 }
 function onSwipeEnd(e, direction) {
+  if (!isDrawerOpen.value && coordsStart.x > 100) {
+    return;
+  }
   overlay.value.style.transitionDuration = `${config.transitionDuration}s`;
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   if (direction === "right") {
-    if (!isOpen.value) {
+    if (!isDrawerOpen.value) {
       if (coordsEnd.x - coordsStart.x > config.changeStateTrigger) {
+        isDrawerOpen.value = true;
         open();
       } else {
+        isDrawerOpen.value = false;
         close();
       }
     }
   } else if (direction === "left") {
-    if (isOpen.value && coordsEnd.x <= maxDrawerWidth.value) {
+    if (isDrawerOpen.value && coordsEnd.x <= maxDrawerWidth.value) {
       if (
         (coordsStart.x > maxDrawerWidth.value && coordsEnd.x < maxDrawerWidth.value - config.changeStateTrigger)
       || (coordsStart.x < maxDrawerWidth.value && coordsStart.x - coordsEnd.x > config.changeStateTrigger)
       ) {
+        isDrawerOpen.value = false;
         close();
       } else {
+        isDrawerOpen.value = true;
         open();
       }
     }
   } else {
-    close();
+    // close();
+    isDrawerOpen.value = false;
   }
 }
 
 onMounted(() => {
+  // the drawer is sliding only for width < config.windowMaxWidth
   if (viewportWidth.value < config.windowMaxWidth) {
     initStyles();
     window.addEventListener("resize", initStyles, false);
@@ -161,21 +203,21 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
+  <aside
     ref="touchSlideout"
     class="touch-slideout"
-    :class="{ open: isOpen }"
+    :class="{ open: isDrawerOpen }"
   >
     <div ref="touchSlideoutWrapper" class="touch-slideout-wrapper">
       <div class="touch-slideout-drawer">
-        <slot />
+        <slot :close-drawer="close" />
       </div>
     </div>
-  </div>
+  </aside>
   <div
     ref="overlay"
     class="overlay"
-    :class="{ hidden: !isOpen, disabled1: !isSwiping && !isOpen }"
+    :class="{ hidden: !isDrawerOpen, disabled1: !isSwiping && !isDrawerOpen }"
   />
   <!-- :style="{ opacity: overlayOpacity }" -->
 </template>
@@ -220,5 +262,9 @@ onUnmounted(() => {
   &.hidden {
     z-index: -999;
   }
+  .notebook &, .desktop &  {
+    display: none;
+  }
 }
 </style>
+@/composables/useTouchSwipe

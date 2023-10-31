@@ -1,5 +1,5 @@
 @import "@/assets/scss/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -22,7 +22,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 0vh;
+  // min-height: 100vh;
   a {
     font-weight: 500;
     color: #646cff;
@@ -31,21 +31,12 @@ body {
       color: #535bf2;
     }
   }
-  &.mobile,
-  &.tablet {
-    padding-top: $topbarHeight;
-  }
-  &.notebook {
-    padding-top: $navHeight;
-  }
-  &.desktop {
-    padding-top: $navbarHeight-desktop;
-  }
 }
 
 #app {
+  min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2em 2em 0;
+  // padding: 2em 2em 0;
   text-align: center;
 }

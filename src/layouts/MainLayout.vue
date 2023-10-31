@@ -1,60 +1,46 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import AppContentPane from "@/components/AppContentPane.vue";
 import TouchSlideout from "@/components/TouchSlideout.vue";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
-import { useSwipe } from "@/composables/useSwipe";
+import { useAppConfig } from "@/composables/useAppConfig";
 
-const {
-  isSwiping,
-  direction,
-  coordsStart,
-  coordsEnd,
-} = useSwipe(
-  document.body,
-  {},
-);
+const { isDrawerOpen } = useAppConfig();
 
-const drawerStatus = ref(true);
-function toggleDrawer() {
-  console.log(drawerStatus.value);
-  drawerStatus.value = !drawerStatus.value;
-  console.log(drawerStatus.value);
-}
+// const drawerStatus = ref(true);
+// function toggleDrawer() {
+//   // console.log(drawerStatus.value);
+//   drawerStatus.value = !drawerStatus.value;
+//   // console.log(drawerStatus.value);
+// }
 </script>
 
 <template>
-  <AppHeader />
+  <div class="app">
+    <AppHeader />
 
-  <TouchSlideout v-model="drawerStatus">
-    <AppSidebar />
-  </TouchSlideout>
+    <div class="main-pane">
+      <TouchSlideout>
+        <!-- <TouchSlideout v-model="isDrawerOpen"> -->
+        <AppSidebar />
+        <!-- <AppSidebar @close-drawer="drawerStatus = false" /> -->
+      </TouchSlideout>
 
-  <router-view />
+      <AppContentPane />
+    </div>
 
-  <div class="content">
-    <!-- <button @click="drawerStatus = !drawerStatus"> -->
-    <button @click="toggleDrawer">
-      OPEN MENU
-    </button>
-    <h3>isSwiping: {{ isSwiping }}</h3>
-    <h3>direction: {{ direction }}</h3>
-    <h3>coordsStart: {{ coordsStart }}</h3>
-    <h3>coordsEnd: {{ coordsEnd }}</h3>
-    <!-- <h3>lengthX: {{ moveX }}</h3> -->
-    <!-- <h3>lengthY: {{ moveY }}</h3> -->
+    <AppFooter />
   </div>
-
-  <div class="content">
-    <!-- <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view> -->
-  </div>
-  <AppFooter />
 </template>
 
 <style lang="scss">
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .main-pane {
+    flex-grow: 1;
+  }
+}
 </style>
