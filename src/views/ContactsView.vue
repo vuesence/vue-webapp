@@ -52,7 +52,7 @@ async function submitForm() {
 
       <input ref="submit" type="submit" value="Submit" @click="submitForm" />
     </div>
-    <img class="picture" src="/images/3.jpg" />
+    <!-- <img class="picture" src="/images/3.jpg" /> -->
   </div>
   <!-- </div> -->
 </template>
