@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "@/*": ["./src/*"] },
+    "typeRoots": ["./types"],
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["ES2021", "DOM", "ScriptHost"],
+    "allowJs": true,
+    "target": "esnext",
+    "module": "esnext"
+  }
+}

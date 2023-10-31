@@ -1,0 +1,51 @@
+@import "@/assets/scss/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #213547;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 0vh;
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+    &:hover {
+      color: #535bf2;
+    }
+  }
+  &.mobile,
+  &.tablet {
+    padding-top: $topbarHeight;
+  }
+  &.notebook {
+    padding-top: $navHeight;
+  }
+  &.desktop {
+    padding-top: $navbarHeight-desktop;
+  }
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2em 2em 0;
+  text-align: center;
+}
