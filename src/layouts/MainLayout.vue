@@ -43,6 +43,7 @@ import AppSidebar from "@/components/AppSidebar.vue";
   min-height: 100svh;
   .main-pane {
     flex-grow: 1;
+    display: flex;
     z-index: 2;
   }
 }

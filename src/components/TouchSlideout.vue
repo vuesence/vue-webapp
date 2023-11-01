@@ -9,15 +9,11 @@ const { isDrawerOpen } = useAppConfig();
 
 console.log("setup - isDrawerOpen", isDrawerOpen.value);
 
-const {
-  isSwiping,
-  coordsStart,
-  coordsEnd,
-  stop,
-} = useTouchSwipe(
-  document.body,
-  { onSwipe, onSwipeEnd, onSwipeStart },
-);
+const { isSwiping, coordsStart, coordsEnd, stop } = useTouchSwipe(document.body, {
+  onSwipe,
+  onSwipeEnd,
+  onSwipeStart,
+});
 
 watch(isDrawerOpen, () => {
   console.log("isDrawerOpen", isDrawerOpen.value);
@@ -52,14 +48,11 @@ const config = {
   changeStateTrigger: 100, // px
   windowMaxWidth: 1024, // px
   maxDrawerWidthPortion: 0.8,
-  maxDrawerWidth: 400,
+  maxDrawerWidth: 300,
 };
 
 const maxDrawerWidth = computed(() => {
-  return Math.min(
-    config.maxDrawerWidth,
-    viewportWidth.value * config.maxDrawerWidthPortion,
-  );
+  return Math.min(config.maxDrawerWidth, viewportWidth.value * config.maxDrawerWidthPortion);
 });
 
 function initStyles() {
@@ -170,8 +163,9 @@ function onSwipeEnd(e, direction) {
   } else if (direction === "left") {
     if (isDrawerOpen.value && coordsEnd.x <= maxDrawerWidth.value) {
       if (
-        (coordsStart.x > maxDrawerWidth.value && coordsEnd.x < maxDrawerWidth.value - config.changeStateTrigger)
-      || (coordsStart.x < maxDrawerWidth.value && coordsStart.x - coordsEnd.x > config.changeStateTrigger)
+        (coordsStart.x > maxDrawerWidth.value
+          && coordsEnd.x < maxDrawerWidth.value - config.changeStateTrigger)
+        || (coordsStart.x < maxDrawerWidth.value && coordsStart.x - coordsEnd.x > config.changeStateTrigger)
       ) {
         isDrawerOpen.value = false;
         close();
@@ -203,11 +197,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <aside
-    ref="touchSlideout"
-    class="touch-slideout"
-    :class="{ open: isDrawerOpen }"
-  >
+  <aside ref="touchSlideout" class="touch-slideout" :class="{ open: isDrawerOpen }">
     <div ref="touchSlideoutWrapper" class="touch-slideout-wrapper">
       <div class="touch-slideout-drawer">
         <slot :close-drawer="close" />
@@ -222,7 +212,7 @@ onUnmounted(() => {
   <!-- :style="{ opacity: overlayOpacity }" -->
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .touch-slideout {
   z-index: 9999;
   position: fixed;
@@ -232,21 +222,31 @@ onUnmounted(() => {
   will-change: transform;
   transition-property: transform;
   transition-timing-function: ease;
-}
-.touch-slideout-wrapper {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.touch-slideout-drawer {
-  display: block;
-  overflow-y: overlay;
-  height: 100%;
-  width: 100%;
-  // background: hsl(2, 57%, 40%);
-  background-color: #eee;
+  .notebook &,
+  .desktop & {
+    position: initial;
+    transform: none !important;
+  }
+  .touch-slideout-wrapper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #eee;
+    .notebook &,
+    .desktop & {
+      position: initial;
+      background-color: white;
+    }
+    .touch-slideout-drawer {
+      display: block;
+      overflow-y: overlay;
+      height: 100%;
+      width: 100%;
+      // background: hsl(2, 57%, 40%);
+    }
+  }
 }
 .overlay {
   background: #000;
@@ -263,7 +263,8 @@ onUnmounted(() => {
   &.hidden {
     z-index: -999;
   }
-  .notebook &, .desktop &  {
+  .notebook &,
+  .desktop & {
     display: none;
   }
 }
