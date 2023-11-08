@@ -191,7 +191,6 @@ onMounted(() => {
     initStyles();
     window.addEventListener("resize", initStyles, false);
     overlay.value.addEventListener("click", overlayClick, false);
-    // document.body.addEventListener("click", overlayClick, false);
   }
 });
 
@@ -213,9 +212,8 @@ onUnmounted(() => {
   <div
     ref="overlay"
     class="overlay"
-    :class="{ hidden: !isDrawerOpen, disabled1: !isSwiping && !isDrawerOpen }"
+    :class="{ hidden: !isDrawerOpen }"
   />
-  <!-- :style="{ opacity: overlayOpacity }" -->
 </template>
 
 <style scoped lang="scss">
