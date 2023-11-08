@@ -6,7 +6,6 @@ function loadIcons() {
     as: "raw",
     eager: true,
   });
-  console.log(modules);
   for (const fileName in modules) {
     const name = fileName.substring(fileName.lastIndexOf("/") + 1, fileName.length - 4);
     svgResources.set(name, modules[fileName]);

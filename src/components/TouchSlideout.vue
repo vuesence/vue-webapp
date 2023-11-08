@@ -275,4 +275,3 @@ onUnmounted(() => {
   }
 }
 </style>
-@/composables/useTouchSwipe

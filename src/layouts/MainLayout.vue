@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import AppContentPane from "@/components/AppContentPane.vue";
-import TouchSlideout from "@/components/TouchSlideout.vue";
+import SimpleDrawer from "@/components/SimpleDrawer.vue";
+
+// import TouchSlideoutDrawer from "@/components/TouchSlideoutDrawer.vue";
 import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
@@ -22,11 +24,12 @@ const { isDrawerOpen } = useAppConfig();
     <AppHeader />
 
     <div class="main-pane">
-      <!-- <TouchSlideout> -->
-      <TouchSlideout v-model="isDrawerOpen">
+      <SimpleDrawer v-model="isDrawerOpen">
         <AppSidebar />
-        <!-- <AppSidebar @close-drawer="isDrawerOpen = false" /> -->
-      </TouchSlideout>
+      </SimpleDrawer>
+      <!-- <TouchSlideoutDrawer v-model="isDrawerOpen">
+        <AppSidebar />
+      </TouchSlideoutDrawer> -->
 
       <AppContentPane />
     </div>
