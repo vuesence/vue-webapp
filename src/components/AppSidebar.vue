@@ -31,6 +31,17 @@ nav {
   ul {
     list-style-type: none;
     padding-left: 0;
+    li {
+      margin: 0 2em;
+      line-height: 3em;
+      border-bottom: solid 1px rgb(200, 200, 200);
+      a {
+        color: #888;
+        &:hover {
+          color: #444;
+        }
+      }
+    }
   }
 }
 </style>
