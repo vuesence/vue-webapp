@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useTouchSwipe } from "@/composables/useTouchSwipe";
-import { useAppConfig } from "@/composables/useAppConfig";
 
-const { isDrawerOpen } = useAppConfig();
+// import { useAppConfig } from "@/composables/useAppConfig";
 
-// const isDrawerOpen = defineModel<boolean>();
+// const { isDrawerOpen } = useAppConfig();
+
+const isDrawerOpen = defineModel<boolean>();
 
 console.log("setup - isDrawerOpen", isDrawerOpen.value);
 
@@ -59,7 +60,8 @@ function initStyles() {
   console.log("initStyles");
 
   viewportWidth.value = window.innerWidth;
-  touchSlideoutWidth = maxDrawerWidth.value + config.activeTouchAreaWidth;
+  // touchSlideoutWidth = maxDrawerWidth.value + config.activeTouchAreaWidth;
+  touchSlideoutWidth = maxDrawerWidth.value;
   touchSlideoutWrapper.value.style.width = `${maxDrawerWidth.value}px`;
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   overlay.value.style.transitionDuration = `${config.transitionDuration}s`;
@@ -82,6 +84,7 @@ function overlayClick(event) {
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   console.log("x", x);
   console.log("event.clientX", event.clientX);
+  console.log("maxDrawerWidth.value", maxDrawerWidth.value);
   if (event.clientX > x + maxDrawerWidth.value) {
     // close();
     isDrawerOpen.value = false;
@@ -91,8 +94,10 @@ function overlayClick(event) {
 function open() {
   overlay.value.style.transitionDuration = `${config.transitionDuration}s`;
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
+  overlay.value.style.display = "initial";
   overlay.value.style.opacity = config.maxOverlayOpacity;
-  touchSlideout.value.style.width = `${viewportWidth.value}px`;
+  touchSlideout.value.style.width = `${maxDrawerWidth.value}px`;
+  // touchSlideout.value.style.width = `${viewportWidth.value}px`;
   touchSlideout.value.style.transform = "translateX(0px)";
   // isDrawerOpen.value = true;
 }
@@ -185,14 +190,15 @@ onMounted(() => {
   if (viewportWidth.value < config.windowMaxWidth) {
     initStyles();
     window.addEventListener("resize", initStyles, false);
-    document.body.addEventListener("click", overlayClick, false);
+    overlay.value.addEventListener("click", overlayClick, false);
+    // document.body.addEventListener("click", overlayClick, false);
   }
 });
 
 onUnmounted(() => {
   stop();
   window.removeEventListener("resize", initStyles, false);
-  document.body.removeEventListener("click", overlayClick, false);
+  overlay.value.removeEventListener("click", overlayClick, false);
 });
 </script>
 

@@ -5,9 +5,9 @@ import AppHeader from "@/components/AppHeader.vue";
 import AppFooter from "@/components/AppFooter.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
 
-// import { useAppConfig } from "@/composables/useAppConfig";
+import { useAppConfig } from "@/composables/useAppConfig";
 
-// const { isDrawerOpen } = useAppConfig();
+const { isDrawerOpen } = useAppConfig();
 
 // const drawerStatus = ref(true);
 // function toggleDrawer() {
@@ -22,10 +22,10 @@ import AppSidebar from "@/components/AppSidebar.vue";
     <AppHeader />
 
     <div class="main-pane">
-      <TouchSlideout>
-        <!-- <TouchSlideout v-model="isDrawerOpen"> -->
+      <!-- <TouchSlideout> -->
+      <TouchSlideout v-model="isDrawerOpen">
         <AppSidebar />
-        <!-- <AppSidebar @close-drawer="drawerStatus = false" /> -->
+        <!-- <AppSidebar @close-drawer="isDrawerOpen = false" /> -->
       </TouchSlideout>
 
       <AppContentPane />

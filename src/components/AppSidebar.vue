@@ -14,7 +14,7 @@ const links = [
   <nav>
     <ul>
       <li v-for="link in links" :key="link.label">
-        <router-link :to="{ name: 'home' }" @click="closeDrawer">
+        <router-link :to="{ name: link.name }" @click="closeDrawer">
           {{ link.label }}
         </router-link>
       </li>

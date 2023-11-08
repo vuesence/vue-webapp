@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import { useTouchSwipe } from "@/composables/useTouchSwipe";
-import { useAppConfig } from "@/composables/useAppConfig";
-
-const { isDrawerOpen } = useAppConfig();
 
 const {
   isSwiping,
@@ -21,9 +18,7 @@ const {
 
     <div class="content">
       <!-- <button @click="drawerStatus = !drawerStatus"> -->
-      <button @click="isDrawerOpen = true">
-        OPEN MENU
-      </button>
+
       <h3>isSwiping: {{ isSwiping }}</h3>
       <h3>direction: {{ direction }}</h3>
       <h3>coordsStart: {{ coordsStart }}</h3>
