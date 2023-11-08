@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 5177",
+    "dev": "vite",
     "build": "vite build",
     "build:tsc": "vue-tsc && vite build",
     "preview": "vite preview",
@@ -12,14 +12,14 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.3.7",
+    "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.8",
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.9.0",
     "@vitejs/plugin-vue": "^4.4.0",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "sass": "^1.69.5",
     "typescript": "^4.9.5",
     "vite": "^4.5.0"

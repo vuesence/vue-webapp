@@ -23,8 +23,14 @@ const links = [
 </template>
 
 <style lang="scss" scoped>
-ul {
-  list-style-type: none;
-  padding-left: 0;
+nav {
+  min-width: 280px;
+  .notebook & {
+    min-width: 230px;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 }
 </style>
