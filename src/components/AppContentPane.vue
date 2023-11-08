@@ -30,5 +30,6 @@
 <style lang="scss" scoped>
 .content-pane {
   padding: 15px 10px;
+  margin: 0 auto;
 }
 </style>

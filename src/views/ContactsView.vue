@@ -1,27 +1,18 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-// import Message from "vue-m-message";
-
-// import { sendMessage } from "@/utils/messaging";
-// import "vue-m-message/dist/style.css";
-
 const submit = ref();
 const form = ref({ name: "", email: "", message: "", check: "" });
 
 async function submitForm() {
   submit.value.setAttribute("disabled", true);
-  if (form.value.check === "фонд") {
+  if (form.value.check === "vue") {
     // const res = await sendMessage(form);
     // if (res) {
-    // form.value = { name: "", email: "", message: "", check: "" };
+    //  form.value = { name: "", email: "", message: "", check: "" };
     // }
   } else {
-    // Message.error("Неверное проверочное слово", {
-    //   // supportHTML: true,
-    //   duration: 5000,
-    //   position: "bottom-right",
-    // });
+    // Incorrect 'captcha'
   }
 
   submit.value.removeAttribute("disabled");
@@ -30,24 +21,22 @@ async function submitForm() {
 
 <template>
   <div>
-    <h2>Обратная связь</h2>
+    <h2>Share your feedback</h2>
     <p>
-      Если вы хотите сделать пожертвование, или у вас есть какое-то предложение, напишите нам через форму ниже
-      или по электронной почте:
-      <a href="mailto:info@alterra-fond.ru">info@alterra-fond.ru</a>
+      Thanks for sending us your ideas
     </p>
     <!-- <div class="form-container"> -->
     <div class="form-container" action="action_page.php">
-      <label for="fname">Ваше имя</label>
+      <label for="fname">Your name</label>
       <input id="fname" v-model="form.name" type="text" name="firstname" placeholder="" />
 
-      <label for="lname">Ваш email или телефон</label>
+      <label for="lname">Your email or phone number</label>
       <input id="lname" v-model="form.email" type="text" name="lastname" placeholder="" />
 
-      <label for="subject">Сообщение</label>
+      <label for="subject">Message</label>
       <textarea id="subject" v-model="form.message" name="subject" placeholder=""></textarea>
 
-      <label for="check">Введите слово "фонд"</label>
+      <label for="check">Enter word "vue"</label>
       <input id="check" v-model="form.check" type="text" name="check" placeholder="" />
 
       <input ref="submit" type="submit" value="Submit" @click="submitForm" />
