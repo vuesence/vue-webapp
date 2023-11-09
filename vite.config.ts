@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 // import { URL, fileURLToPath } from "node:url";
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/vue-website-template/",
+  base: "/vue-webapp/",
   build: {
     target: "esnext",
   },
