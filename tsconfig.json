@@ -10,5 +10,6 @@
     "allowJs": true,
     "target": "esnext",
     "module": "esnext"
+    // "types": ["node", "vite/client"]
   }
 }
