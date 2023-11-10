@@ -1,20 +1,15 @@
 <script setup lang="ts">
 import AppContentPane from "@/components/AppContentPane.vue";
-import TouchSlideoutDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
-import AppHeader from "@/components/AppHeader.vue";
-import AppFooter from "@/components/AppFooter.vue";
+import AppNavigationDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
+import AppHeader from "@/components/headers/SimpleHeader.vue";
+import AppFooter from "@/components/footers/RichFooter.vue";
+
+// import AppFooter from "@/components/footers/SimpleFooter.vue";
 
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
-
-// const drawerStatus = ref(true);
-// function toggleDrawer() {
-//   // console.log(drawerStatus.value);
-//   drawerStatus.value = !drawerStatus.value;
-//   // console.log(drawerStatus.value);
-// }
 </script>
 
 <template>
@@ -25,9 +20,9 @@ const { isDrawerOpen } = useAppConfig();
       <!-- <SimpleDrawer v-model="isDrawerOpen">
         <AppSidebar />
       </SimpleDrawer> -->
-      <TouchSlideoutDrawer v-model="isDrawerOpen">
+      <AppNavigationDrawer v-model="isDrawerOpen">
         <AppSidebar />
-      </TouchSlideoutDrawer>
+      </AppNavigationDrawer>
 
       <AppContentPane />
     </div>

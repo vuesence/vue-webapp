@@ -8,7 +8,7 @@
   //     "source.fixAll.eslint": true,
   //     "source.fixAll": false
   //   },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "workbench.colorTheme": "Default Dark Modern",
     // "workbench.editor.tabCloseButton": "left",
     "workbench.fontAliasing": "antialiased",
