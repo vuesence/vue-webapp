@@ -51,6 +51,7 @@ async function submitForm() {
   border-radius: 5px;
   // background-color: #f2f2f2;
   padding: 20px;
+  text-align: left;
 
   input[type="text"],
   select,
