@@ -7,9 +7,6 @@ const { isDrawerOpen } = useAppConfig();
 
 <template>
   <header class="header">
-    <!-- <button @click="isDrawerOpen = !isDrawerOpen">
-      OPEN MENU
-    </button> -->
     <BaseIcon name="hamburger" class="drawer-toggle" @click="isDrawerOpen = !isDrawerOpen" />
     <div class="title">
       Acme Corporation

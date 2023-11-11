@@ -12,7 +12,7 @@
       <address>
         5534 Somewhere In. The World 22193-10212<br>
 
-        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+        <a class="footer__btn" href="mailto:acme-inc@gmail.com">Email Us</a>
       </address>
     </div>
 
@@ -144,9 +144,9 @@
 }
 
 .footer__logo {
-  font-family: 'Pacifico', cursive;
+  // font-family: 'Pacifico', cursive;
   font-weight: 400;
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-size: 1.5rem;
 }
 
@@ -161,13 +161,13 @@
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  background-color: rgb(33, 33, 33, 0.07);
-  border-radius: 100px;
+  // background-color: rgb(33, 33, 33, 0.07);
+  // border-radius: 100px;
   color: #2f2f2f;
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
-  padding: 0 1.3em;
+  // padding: 0 1.3em;
 }
 
 .footer__nav {

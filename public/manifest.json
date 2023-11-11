@@ -1,0 +1,39 @@
+{
+  "description": "Acme Corporation webapp",
+  "dir": "auto",
+  "display": "standalone",
+  "name": "Acme Inc.",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Acme",
+  "start_url": "/",
+  "categories": [
+    "it",
+    "development",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/assets/images/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/logo-48.png",
+      "type": "image/png",
+      "sizes": "48x48",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/images/logo-128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ]
+}
