@@ -27,10 +27,12 @@ async function submitForm() {
       Thanks for sending us your ideas!
     </p>
     <p>
+    <i>
       This form does not work. Please use 
       <a href="https://github.com/vuesence/vue-webapp" target="_blank">
         GitHub Issues and Feature requests
       </a> instead.
+    </i>
     </p>
     <!-- <div class="form-container"> -->
     <div class="form-container" action="action_page.php">
