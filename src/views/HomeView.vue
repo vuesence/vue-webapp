@@ -1,15 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface IOption {
+  name: string
+  value: string
+}
+
+let options: IOption[] = [];
+// options placeholder
+</script>
 
 <template>
   <div>
-    <h2>Vue 3 base website template</h2>
-    <p>
-      Благотворительный фонд содействия образованию «Дар» занимается поддержкой российского образования,
-      проектов и событий, направленных на обеспечение высокого качества образования учащихся.
-      Благотворительные программы фонда ориентированы на выявление и сопровождение одаренных и талантливых
-      детей, молодежи в их творческой реализации, поддержку одарённых и талантливых детей, в том числе,
-      нуждающихся в особом внимании — с ограниченными возможностями здоровья, из числа сирот, малообеспеченных
-      семей; .
+    <h3>Congratulations with scaffolding your vue webapp!</h3>
+    <p v-if="options.length">
+      Selected options:
     </p>
+    <ul>
+      <li
+        v-for="option in options"
+        :key="option.name"
+      >
+        {{ `${option.name}: ${option.value}` }}
+      </li>
+    </ul>
   </div>
 </template>

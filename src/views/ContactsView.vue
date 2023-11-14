@@ -6,6 +6,7 @@ const form = ref({ name: "", email: "", message: "", check: "" });
 
 async function submitForm() {
   submit.value.setAttribute("disabled", true);
+  alert("This form does not work. Please use GitHub Issues and Feature requests instead.");
   if (form.value.check === "vue") {
     // const res = await sendMessage(form);
     // if (res) {
@@ -23,7 +24,7 @@ async function submitForm() {
   <div>
     <h2>Share your feedback</h2>
     <p>
-      Thanks for sending us your ideas
+      Thanks for sending us your ideas!
     </p>
     <!-- <div class="form-container"> -->
     <div class="form-container" action="action_page.php">
