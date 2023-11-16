@@ -7,14 +7,15 @@ const form = ref({ name: "", email: "", message: "", check: "" });
 async function submitForm() {
   submit.value.setAttribute("disabled", true);
   alert("This form does not work. Please use GitHub Issues and Feature requests instead.");
-  if (form.value.check === "vue") {
-    // const res = await sendMessage(form);
-    // if (res) {
-    //  form.value = { name: "", email: "", message: "", check: "" };
-    // }
-  } else {
-    // Incorrect 'captcha'
-  }
+  //   if (form.value.check === "vue") {
+  //     // const res = await sendMessage(form);
+  //     // if (res) {
+  //     //  form.value = { name: "", email: "", message: "", check: "" };
+  //     // }
+  //   }
+  //  else {
+  //     // Incorrect 'captcha'
+  //   }
 
   submit.value.removeAttribute("disabled");
 }
@@ -27,28 +28,28 @@ async function submitForm() {
       Thanks for sending us your ideas!
     </p>
     <p>
-    <i>
-      This form does not work. Please use 
-      <a href="https://github.com/vuesence/vue-webapp" target="_blank">
-        GitHub Issues and Feature requests
-      </a> instead.
-    </i>
+      <i>
+        This form does not work. Please use
+        <a href="https://github.com/vuesence/vue-webapp" target="_blank">
+          GitHub Issues and Feature requests
+        </a> instead.
+      </i>
     </p>
     <!-- <div class="form-container"> -->
     <div class="form-container" action="action_page.php">
       <label for="fname">Your name</label>
-      <input id="fname" v-model="form.name" type="text" name="firstname" placeholder="" />
+      <input id="fname" v-model="form.name" type="text" name="firstname" placeholder="">
 
       <label for="lname">Your email or phone number</label>
-      <input id="lname" v-model="form.email" type="text" name="lastname" placeholder="" />
+      <input id="lname" v-model="form.email" type="text" name="lastname" placeholder="">
 
       <label for="subject">Message</label>
-      <textarea id="subject" v-model="form.message" name="subject" placeholder=""></textarea>
+      <textarea id="subject" v-model="form.message" name="subject" placeholder="" />
 
       <label for="check">Enter word "vue"</label>
-      <input id="check" v-model="form.check" type="text" name="check" placeholder="" />
+      <input id="check" v-model="form.check" type="text" name="check" placeholder="">
 
-      <input ref="submit" type="submit" value="Submit" @click="submitForm" />
+      <input ref="submit" type="submit" value="Submit" @click="submitForm">
     </div>
     <!-- <img class="picture" src="/images/3.jpg" /> -->
   </div>

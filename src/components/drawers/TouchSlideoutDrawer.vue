@@ -10,7 +10,7 @@ const isDrawerOpen = defineModel<boolean>();
 
 console.log("setup - isDrawerOpen", isDrawerOpen.value);
 
-const { isSwiping, coordsStart, coordsEnd, stop } = useTouchSwipe(document.body, {
+const { coordsStart, coordsEnd, stop } = useTouchSwipe(document.body, {
   onSwipe,
   onSwipeEnd,
   onSwipeStart,
@@ -80,6 +80,7 @@ function overlayClick(event) {
   if (!isDrawerOpen.value && x < -100) {
     return;
   }
+
   event.stopPropagation();
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   console.log("x", x);
@@ -117,6 +118,7 @@ function onSwipe(event) {
   if (!isDrawerOpen.value && coordsStart.x > 100) {
     return;
   }
+
   const touchMovePosition = event.changedTouches[0].clientX;
   let touchSlideoutCurrentLeft = touchSlideoutStartLeft + (touchMovePosition - coordsStart.x);
 
@@ -129,20 +131,23 @@ function onSwipe(event) {
     if (touchMovePosition <= maxDrawerWidth.value) {
       touchSlideout.value.style.transform = `translateX(${touchSlideoutCurrentLeft}px)`;
     }
+
     const overlayOpacity = touchMovePosition / maxDrawerWidth.value;
     if (overlayOpacity > 0.05) {
       overlay.value.style.display = "initial";
     }
+
     if (overlayOpacity > 0 && overlayOpacity < 1) {
       overlay.value.style.opacity = Math.min(overlayOpacity, config.maxOverlayOpacity);
-      // console.log("overlayOpacity", overlay.value.style.opacity);
     }
+    // console.log("overlayOpacity", overlay.value.style.opacity);
   }
 }
 function onSwipeStart() {
   if (!isDrawerOpen.value && coordsStart.x > 100) {
     return;
   }
+
   touchSlideout.value.style.transitionDuration = "0s";
   overlay.value.style.transitionDuration = "0s";
   // overlay.value.style.zIndex = 999;
@@ -153,6 +158,7 @@ function onSwipeEnd(e, direction) {
   if (!isDrawerOpen.value && coordsStart.x > 100) {
     return;
   }
+
   overlay.value.style.transitionDuration = `${config.transitionDuration}s`;
   touchSlideout.value.style.transitionDuration = `${config.transitionDuration}s`;
   if (direction === "right") {
@@ -169,7 +175,7 @@ function onSwipeEnd(e, direction) {
     if (isDrawerOpen.value && coordsEnd.x <= maxDrawerWidth.value) {
       if (
         (coordsStart.x > maxDrawerWidth.value
-          && coordsEnd.x < maxDrawerWidth.value - config.changeStateTrigger)
+        && coordsEnd.x < maxDrawerWidth.value - config.changeStateTrigger)
         || (coordsStart.x < maxDrawerWidth.value && coordsStart.x - coordsEnd.x > config.changeStateTrigger)
       ) {
         isDrawerOpen.value = false;

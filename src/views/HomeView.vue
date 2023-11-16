@@ -4,7 +4,7 @@ interface IOption {
   value: string
 }
 
-let options: IOption[] = [];
+const options: IOption[] = [];
 // options placeholder
 </script>
 

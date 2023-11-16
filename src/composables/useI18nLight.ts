@@ -63,6 +63,7 @@ export function useI18n() {
     if (!msg || !locale.value) {
       return "";
     }
+
     let val
       = msg.split(".").reduce((val, part) => {
         // console.log(part);

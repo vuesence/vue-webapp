@@ -11,6 +11,7 @@ export function useScreenWidthTracker(breakpoints: object) {
     if (i > 0) {
       clauses.push(`(min-width: ${breakpointArray[i - 1][1] + 1}px)`);
     }
+
     if (i < breakpointArray.length - 1) {
       clauses.push(`(max-width: ${breakpointArray[i][1]}px)`);
     }

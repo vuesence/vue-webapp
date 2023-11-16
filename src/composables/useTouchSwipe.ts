@@ -82,9 +82,7 @@ export function useTouchSwipe(
 
     if (abs(diffX.value) > abs(diffY.value)) {
       return diffX.value > 0 ? "left" : "right";
-    } else {
-      return diffY.value > 0 ? "up" : "down";
-    }
+    } else { return diffY.value > 0 ? "up" : "down"; }
   });
 
   const listenerOptions: { passive?: boolean; capture?: boolean } = { passive: true, capture: false };
@@ -100,9 +98,11 @@ export function useTouchSwipe(
     if (e.touches.length !== 1) {
       return;
     }
+
     if (listenerOptions.capture && !listenerOptions.passive) {
       e.preventDefault();
     }
+
     coordsStart.x = coordsEnd.x = round(e.touches[0].clientX);
     coordsStart.y = coordsEnd.y = round(e.touches[0].clientY);
     onSwipeStart?.(e);
@@ -112,11 +112,13 @@ export function useTouchSwipe(
     if (e.touches.length !== 1) {
       return;
     }
+
     coordsEnd.x = round(e.touches[0].clientX);
     coordsEnd.y = round(e.touches[0].clientY);
     if (!isSwiping.value && isThresholdExceeded.value) {
       isSwiping.value = true;
     }
+
     if (isSwiping.value) {
       onSwipe?.(e);
     }

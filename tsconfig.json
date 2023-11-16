@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"] },
-    "typeRoots": ["./types"],
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "lib": ["ES2021", "DOM", "ScriptHost"],
-    "allowJs": true,
     "target": "esnext",
-    "module": "esnext"
+    "lib": ["ES2021", "DOM", "ScriptHost"],
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": { "@/*": ["./src/*"] },
+    "resolveJsonModule": true,
+    "typeRoots": ["./types"],
+    "allowJs": true,
+    "esModuleInterop": true
     // "types": ["node", "vite/client"]
   }
 }
