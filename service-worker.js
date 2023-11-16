@@ -1,5 +1,6 @@
+/* eslint-disable no-restricted-globals */
 const VERSION = 1.0;
-const HOSTNAME = self.location.hostname;
+// const HOSTNAME = self.location.hostname;
 
 const nonCached = ["/", "/build.json"];
 
@@ -9,33 +10,34 @@ const CHACHE_LIST = {
   fonts: `fonts-v${VERSION}`,
 };
 
-self.addEventListener("install", (event) => {
+self.addEventListener("install", () => {
   self.skipWaiting();
   console.log("Service Worker has been installed");
 });
 
 self.addEventListener("activate", (event) => {
-  var expectedCacheNames = Object.keys(CHACHE_LIST).map(function (key) {
+  const expectedCacheNames = Object.keys(CHACHE_LIST).map((key) => {
     return CHACHE_LIST[key];
   });
 
   // Delete out of date caches
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(function (cacheName) {
-          if (expectedCacheNames.indexOf(cacheName) == -1) {
+        cacheNames.map((cacheName) => {
+          if (!expectedCacheNames.includes(cacheName)) {
             console.log("Deleting out of date cache:", cacheName);
             return caches.delete(cacheName);
           }
-        })
+          return null;
+        }),
       );
-    })
+    }),
   );
   console.log("Service Worker has been activated");
 });
 
-self.addEventListener("fetch", function (event) {
+self.addEventListener("fetch", (event) => {
   // console.log("Fetching:", event.request.url);
   event.respondWith(
     (async function () {
@@ -45,35 +47,35 @@ self.addEventListener("fetch", function (event) {
         // console.log("\tCached version found: " + event.request.url);
         return cachedResponse;
       } else {
-        console.log("\tGetting from the Internet:" + event.request.url);
+        console.log(`\tGetting from the Internet:${event.request.url}`);
         return await fetchAndCache(event.request);
       }
-    })()
+    })(),
   );
 });
 
 function fetchAndCache(request) {
   return fetch(request)
-    .then(function (response) {
+    .then((response) => {
       // Check if we received a valid response
       if (!response.ok) {
         return response;
-        // throw Error(response.statusText);
       }
+      // throw Error(response.statusText);
 
       const url = new URL(request.url);
       // console.log(url);
       if (
-        response.status < 400 &&
-        response.type === "basic" &&
-        url.search.indexOf("mode=nocache") == -1 &&
-        !nonCached.includes(url.pathname) &&
-        url.protocol !== "chrome-extension:"
+        response.status < 400
+        && response.type === "basic"
+        && !url.search.includes("mode=nocache")
+        && !nonCached.includes(url.pathname)
+        && url.protocol !== "chrome-extension:"
       ) {
         const cur_cache = getCache(response);
         if (cur_cache) {
           // console.log("\tCaching the response to", request.url);
-          return caches.open(cur_cache).then(function (cache) {
+          return caches.open(cur_cache).then((cache) => {
             cache.put(request, response.clone());
             return response;
           });
@@ -81,8 +83,8 @@ function fetchAndCache(request) {
       }
       return response;
     })
-    .catch(function (error) {
-      console.log("Request failed for: " + request.url, error);
+    .catch((error) => {
+      console.log(`Request failed for: ${request.url}`, error);
       throw error;
     });
 }
@@ -94,9 +96,7 @@ function getCache(response) {
       return CHACHE_LIST.images;
     } else if (
       ["application/javascript", "text/css", "font/woff2"].includes(contentType)
-    ) {
-      return CHACHE_LIST.assets;
-    }
+    ) { return CHACHE_LIST.assets; }
   }
   return false;
 }
