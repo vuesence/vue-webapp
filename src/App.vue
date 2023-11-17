@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import MainLayout from "./layouts/MainLayout.vue";
-import { useScreenWidthTracker } from "@/composables/useScreenWidthTracker";
+import { useScreenWidth } from "@/composables/useScreenWidth";
 
-useScreenWidthTracker({
+useScreenWidth({
   mobile: 480,
   tablet: 767,
   notebook: 1199,

@@ -1,6 +1,6 @@
 import { ref } from "vue";
 
-export function useScreenWidthTracker(breakpoints: object) {
+export function useScreenWidth(breakpoints: object) {
   const screenWidthFactor = ref("");
   const screenSizeMatches = [];
 
