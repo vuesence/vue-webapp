@@ -4,7 +4,7 @@
   <div>
     <h2>About this tool</h2>
     <p>
-      The goal of the `creat-vue-webapp` tool is to allow users to scaffold a new customizable vue web
+      The goal of the `create-vue-webapp` tool is to allow users to scaffold a new customizable vue web
       application.
     </p>
     <ol>
