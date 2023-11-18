@@ -2,7 +2,9 @@
 import AppContentPane from "@/components/AppContentPane.vue";
 import AppNavigationDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
-import AppHeader from "@/components/headers/SimpleHeader.vue";
+
+import AppHeaderContent from "@/components/headers/SimpleHeader.vue";
+import AppHeader from "@/components/headers/SlidingHeader.vue";
 import AppFooter from "@/components/footers/SimpleFooter.vue";
 
 // import AppFooter from "@/components/footers/RichFooter.vue";
@@ -14,7 +16,19 @@ const { isDrawerOpen } = useAppConfig();
 
 <template>
   <div class="app">
-    <AppHeader />
+    <!-- <AppHeader /> -->
+    <AppHeader :threshold-hide="200" :threshold-open="400">
+      <template #first-header>
+        <AppHeaderContent />
+      </template>
+
+      <template #second-header>
+        <AppHeaderContent />
+        <div style="margin-left: 45px">
+          The second header
+        </div>
+      </template>
+    </AppHeader>
 
     <div class="main-pane">
       <AppNavigationDrawer v-model="isDrawerOpen">

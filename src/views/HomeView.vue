@@ -5,7 +5,6 @@ interface IOption {
 }
 
 const options: IOption[] = [];
-// options placeholder
 </script>
 
 <template>
