@@ -1,5 +1,6 @@
 # Vue webapp template
 
+<!-- For npmjs.org -->
 Empty NPM package for the purpose of existence `create-vue-webapp`
 
-Documentation available at [https://github.com/vuesence/vue-webapp](https://github.com/vuesence/vue-webapp)
+Full documentation is available at [https://vue-faq.org/en/vue-webapp/](https://vue-faq.org/en/vue-webapp/)

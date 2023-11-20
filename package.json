@@ -1,7 +1,7 @@
 {
   "name": "vue-webapp",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A basic template for building a new Vue 3 web application using the latest technologies and best practices",
   "license": "MIT",
   "homepage": "https://github.com/vuesence/vue-webapp",
