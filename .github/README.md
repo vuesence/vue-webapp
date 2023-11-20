@@ -26,7 +26,8 @@ $ cd my-vue-project
 $ pnpm i
 $ pnpm dev
 ```
-##### Result in a browser
+
+Result in a browser:
 
 ![](webapp-start.png)
 
