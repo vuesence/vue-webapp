@@ -21,6 +21,8 @@ $ pnpm create vue-webapp
 ...
 ```
 
+![](webapp-start.png)
+
 ## Reasons 
 
 There are quite a few (mostly specific and quickly deprecated) boilerplates for creating a Vue application. Usually by these they mean creating an empty project with specific libraries. In other words, it's just setting up an environment to start development without, directly, code.
