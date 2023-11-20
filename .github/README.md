@@ -1,5 +1,9 @@
 # Vue 3 webapp builder
 
+###
+
+Full documentation is available at [https://vue-faq.org/en/vue-webapp/](https://vue-faq.org/en/vue-webapp/)
+
 ## Short description
 
 Vue 3 webapp builder allows to scaffold a web application, with the ability to choose a business template (portfolio, blog, store, etc.), website layout, design and functional elements (API module, i18n, PWA, splash screen, auth module, themes, etc.), for further customization and content filling.
