@@ -19,7 +19,14 @@ $ pnpm create vue-webapp
 ✔ Select webapp footer ' RichFooter
 ✔ Add 'BaseIcon' component? ... yes
 ...
+
+Scaffolding project in /home/ubuntu/my-vue-project... 
+
+$ cd my-vue-project
+$ pnpm i
+$ pnpm dev
 ```
+##### Result in a browser
 
 ![](webapp-start.png)
 
