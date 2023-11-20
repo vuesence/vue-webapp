@@ -27,9 +27,10 @@ $ pnpm i
 $ pnpm dev
 ```
 
-Result in a browser:
+Result in a browser ([https://vuesence.github.io/vue-webapp](https://vuesence.github.io/vue-webapp/)):
 
 ![](webapp-start.png)
+
 
 ## Reasons 
 
