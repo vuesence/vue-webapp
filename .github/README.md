@@ -1,4 +1,4 @@
-## Vue 3 webapp builder
+# Vue 3 webapp builder
 
 ## Short description
 
