@@ -146,7 +146,7 @@ const socials = [
   }
 }
 
-@media (max-width: 48em) {
+.mobile, .tablet {
   .footer {
     flex-direction: column;
 

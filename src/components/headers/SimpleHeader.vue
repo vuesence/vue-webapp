@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BaseIcon from "@/components/ui/BaseIcon.vue";
+import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
@@ -7,12 +7,7 @@ const { isDrawerOpen } = useAppConfig();
 
 <template>
   <header class="header">
-    <BaseIcon
-      name="hamburger"
-      class="drawer-toggle"
-      fill="currenColor"
-      @click="isDrawerOpen = !isDrawerOpen"
-    />
+    <HamburgerIcon v-model="isDrawerOpen" class="drawer-toggle" />
     <div class="title">
       Acme Corporation
     </div>
@@ -30,7 +25,6 @@ const { isDrawerOpen } = useAppConfig();
   background-color: #eee;
   z-index: 3;
   .drawer-toggle {
-    cursor: pointer;
     .notebook &, .desktop & {
       display: none;
     }

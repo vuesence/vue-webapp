@@ -12,6 +12,6 @@
 
 <style lang="scss" scoped>
 .content-pane {
-  padding: 15px 10px;
+  padding: 1em 2em;
 }
 </style>
