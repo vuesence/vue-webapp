@@ -7,7 +7,12 @@ const { isDrawerOpen } = useAppConfig();
 
 <template>
   <header class="header">
-    <BaseIcon name="hamburger" class="drawer-toggle" @click="isDrawerOpen = !isDrawerOpen" />
+    <BaseIcon
+      name="hamburger"
+      class="drawer-toggle"
+      fill="currenColor"
+      @click="isDrawerOpen = !isDrawerOpen"
+    />
     <div class="title">
       Acme Corporation
     </div>

@@ -23,6 +23,10 @@ const props = defineProps({
     type: String,
     default: "auto",
   },
+  fill: {
+    type: String,
+    default: "none",
+  },
   type: {
     type: String,
     default: "svg",
@@ -42,6 +46,8 @@ const height = computed(() => {
     v-if="getSvgIcon(props.name)"
     class="base-icon"
     :data-name="props.name"
+    :fill="props.fill ?? 'currentColor'"
+    stroke="currentColor"
     :style="{
       width,
       height,
@@ -68,7 +74,10 @@ const height = computed(() => {
   height: 100%;
 
   path {
-    fill: currentColor;
+    // fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: v-bind('props.fill');
   }
 }
 </style>

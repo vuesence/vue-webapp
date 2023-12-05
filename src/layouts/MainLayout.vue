@@ -2,12 +2,14 @@
 import AppContentPane from "@/components/AppContentPane.vue";
 import AppNavigationDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
 import AppSidebar from "@/components/AppSidebar.vue";
-
 import AppHeader from "@/components/headers/SimpleHeader.vue";
 import AppFooter from "@/components/footers/SimpleFooter.vue";
 
 // import AppFooter from "@/components/footers/RichFooter.vue";
 // import AppFooter from "@/components/footers/DistributedFooter.vue";
+// import AppFooter from "@/components/footers/MontineFooter.vue";
+// import AppFooter from "@/components/footers/MontineRichFooter.vue";
+
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
