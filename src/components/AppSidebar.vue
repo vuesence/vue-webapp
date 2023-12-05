@@ -14,8 +14,8 @@ const links = [
   <nav>
     <ul>
       <li v-for="link in links" :key="link.label">
-        <router-link :to="{ name: link.name }" @click="closeDrawer">
-          {{ link.label }}
+        <router-link v-slot="{ navigate }" :to="{ name: link.name }" custom @click="closeDrawer">
+          <span role="link" @click="navigate" @keypress.enter="navigate">{{ link.label }}</span>
         </router-link>
       </li>
     </ul>
@@ -32,10 +32,12 @@ nav {
     list-style-type: none;
     padding-left: 0;
     li {
-      margin: 0 2em;
       line-height: 3em;
       border-bottom: solid 1px rgb(200, 200, 200);
-      a {
+      span {
+        cursor: pointer;
+        display: block;
+        margin: 0 2em;
         color: #888;
         &:hover {
           color: #444;
