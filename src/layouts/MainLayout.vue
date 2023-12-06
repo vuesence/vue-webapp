@@ -5,16 +5,14 @@ import AppSidebar from "@/components/AppSidebar.vue";
 
 // import AppHeader from "@/components/headers/MantineSimpleHeader.vue";
 // import AppHeader from "@/components/headers/MantineSimpleHeader.vue";
-import AppHeader from "@/components/headers/MantineLayeredHeader.vue";
-
-// import AppHeader from "@/components/headers/SimpleHeader.vue";
-// import AppFooter from "@/components/footers/SimpleFooter.vue";
+// import AppHeader from "@/components/headers/MantineLayeredHeader.vue";
+import AppHeader from "@/components/headers/SimpleHeader.vue";
 
 // import AppFooter from "@/components/footers/RichFooter.vue";
 // import AppFooter from "@/components/footers/DistributedFooter.vue";
 // import AppFooter from "@/components/footers/MantineSimpleFooter.vue";
-
-import AppFooter from "@/components/footers/MantineRichFooter.vue";
+// import AppFooter from "@/components/footers/MantineRichFooter.vue";
+import AppFooter from "@/components/footers/SimpleFooter.vue";
 
 import { useAppConfig } from "@/composables/useAppConfig";
 
