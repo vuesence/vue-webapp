@@ -3,7 +3,7 @@ const isDrawerOpen = defineModel<boolean>();
 </script>
 
 <template>
-  <aside class="simple-drawer" :class="{ open: isDrawerOpen }">
+  <aside class="navigation-drawer" :class="{ open: isDrawerOpen }">
     <slot />
   </aside>
   <div
@@ -14,21 +14,23 @@ const isDrawerOpen = defineModel<boolean>();
 </template>
 
 <style scoped lang="scss">
-.simple-drawer {
+.navigation-drawer {
   z-index: 9999;
   position: fixed;
   // top: 0;
   left: 0;
   height: 100%;
-  width: 300px;
+  width: 270px;
   translate: -300px 0;
   transition: all 0.2s ease;
-  background-color: #eee;
+  // background-color: #eee;
+  background-color: white;
   .notebook &,
   .desktop & {
     position: initial;
+    translate: 0;
   }
-  &.open {
+  .mobile &.open, .tablet &.open {
     translate: 0 0;
     transition: all 0.4s ease;
   }

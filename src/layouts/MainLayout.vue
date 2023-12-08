@@ -1,18 +1,24 @@
 <script setup lang="ts">
 import AppContentPane from "@/components/AppContentPane.vue";
-import AppNavigationDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
-import AppSidebar from "@/components/AppSidebar.vue";
+import AppNavigationDrawer from "@/components/drawers/SimpleDrawer.vue";
 
-// import AppHeader from "@/components/headers/MantineSimpleHeader.vue";
-// import AppHeader from "@/components/headers/MantineSimpleHeader.vue";
+// import AppNavigationDrawer from "@/components/drawers/TouchSlideoutDrawer.vue";
+
+// import AppSidebar from "@/components/navbars/SimpleNavbar.vue";
+import AppSidebar from "@/components/navbars/MantineSimpleNavbar.vue";
+
+import AppHeader from "@/components/headers/MantineSimpleHeader.vue";
+
 // import AppHeader from "@/components/headers/MantineLayeredHeader.vue";
-import AppHeader from "@/components/headers/SimpleHeader.vue";
+// import AppHeader from "@/components/headers/SimpleHeader.vue";
 
 // import AppFooter from "@/components/footers/RichFooter.vue";
 // import AppFooter from "@/components/footers/DistributedFooter.vue";
-// import AppFooter from "@/components/footers/MantineSimpleFooter.vue";
+import AppFooter from "@/components/footers/MantineSimpleFooter.vue";
+
 // import AppFooter from "@/components/footers/MantineRichFooter.vue";
-import AppFooter from "@/components/footers/SimpleFooter.vue";
+
+// import AppFooter from "@/components/footers/SimpleFooter.vue";
 
 import { useAppConfig } from "@/composables/useAppConfig";
 

@@ -46,7 +46,7 @@ const height = computed(() => {
     v-if="getSvgIcon(props.name)"
     class="base-icon"
     :data-name="props.name"
-    :fill="props.fill ?? 'currentColor'"
+    :fill1="props.fill ?? 'currentColor'"
     stroke="currentColor"
     :style="{
       width,
@@ -78,6 +78,7 @@ const height = computed(() => {
     stroke: currentColor;
     stroke-width: 1.5;
     fill: v-bind('props.fill');
+    // fill: v-bind('props.fill ?? "currentColor"');
   }
 }
 </style>

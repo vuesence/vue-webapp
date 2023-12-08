@@ -6,7 +6,7 @@ const { closeDrawer } = useAppConfig();
 const links = [
   { name: "home", label: "Home" },
   { name: "about", label: "About" },
-  { name: "contacts", label: "Contacts" },
+  { name: "contacts", label: "Contact us" },
 ];
 </script>
 
@@ -15,7 +15,7 @@ const links = [
     <ul>
       <li v-for="link in links" :key="link.label">
         <router-link v-slot="{ navigate }" :to="{ name: link.name }" custom @click="closeDrawer">
-          <a role="link" @click="navigate" @keypress.enter="navigate">{{ link.label }}</a>
+          <a role="link" @click="navigate">{{ link.label }}</a>
         </router-link>
       </li>
     </ul>

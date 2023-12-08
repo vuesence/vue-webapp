@@ -68,7 +68,7 @@ const socials = [
 
 <style lang="scss" scoped>
 .footer {
-  margin-top: 5rem;
+  margin-top: 1rem;
   border-top: 1px solid #e9ecef;
   // .footer-inner {
   align-items: none;

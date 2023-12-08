@@ -208,7 +208,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <aside ref="touchSlideout" class="touch-slideout" :class="{ open: isDrawerOpen }">
+  <aside ref="touchSlideout" class="navigation-drawer" :class="{ open: isDrawerOpen }">
     <div ref="touchSlideoutWrapper" class="touch-slideout-wrapper">
       <div class="touch-slideout-drawer">
         <slot :close-drawer="close" />
@@ -223,7 +223,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-.touch-slideout {
+.navigation-drawer {
   z-index: 9999;
   position: fixed;
   // top: 0;
