@@ -3,14 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/vue-webapp/assets/images/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/vue-webapp/assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
     <title><!-- title placeholder --></title>
-    <!-- service-worker placeholder -->
-    <script type="module" crossorigin src="/vue-webapp/assets/index-SrKeXn9Q.js"></script>
-    <link rel="stylesheet" crossorigin href="/vue-webapp/assets/index-VN9eY510.css">
-  </head>
-  <body>
+    <script type="module" crossorigin src="/assets/index-KuTLktFQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-OWXBiytC.css">
+  <!-- Facebook Meta Tags -->
+<!-- <meta property="og:url" content="" /> -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="-og:title-" />
+<meta property="og:description" content="description" />
+<meta property="og:image" content="image" />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="image" />
+<meta property="twitter:domain" content="" />
+<!-- <meta property="twitter:url" content="" /> -->
+<meta name="twitter:title" content="-twitter:title-" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="images" />
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+
+</script>
+
+</head>
+  <body class="splash">
+<style>
+  body {
+    /*position: initial;*/
+    position: fixed;
+  }
+  body.splash {
+    overflow-y: hidden;
+  }
+
+  .splash-screen {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: #333; */
+    /* background-color: #000; */
+    background-color: #1a1d29;
+    /* background-image: url("/assets/images/splash-bg.jpg"); */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    color: #eee;
+    opacity: 1;
+    /* opacity: 0.8; */
+    display: none;
+  }
+
+  .splash-screen.fade-out {
+    opacity: 0;
+  }
+
+  .splash .splash-screen {
+    display: flex;
+  }
+
+  .splash-screen > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .splash-screen img.ss-logo {
+    /* margin-top: 30px; */
+    max-width: 50vw;
+  }
+
+  .splash-screen img.title {
+    margin-top: 30px;
+    max-width: 60vw;
+  }
+
+  .splash-screen > div p {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0 10px;
+  }
+
+  .ss-loader {
+    margin-top: 15px;
+    height: 16px;
+  }
+  .ss-loader .loader-ball {
+    background-color: #ccc;
+    border-radius: 16px;
+    display: inline-block;
+    height: 100%;
+    width: 16px;
+    margin: 7px;
+  }
+
+  .ss-loader .loader-ball:first-child {
+    animation: load3 1s ease-in-out infinite;
+    animation-delay: -0.32s;
+  }
+
+  .ss-loader .loader-ball:nth-child(2) {
+    animation: load2 1s ease-in-out infinite;
+    animation-delay: -0.16s;
+  }
+
+  .ss-loader .loader-ball:last-child {
+    animation: load1 1s ease-in-out infinite;
+  }
+
+  @keyframes load1 {
+    0% {
+      opacity: 1;
+    }
+
+    33% {
+      opacity: 0.66;
+    }
+
+    66% {
+      opacity: 0.33;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes load2 {
+    0% {
+      opacity: 0.66;
+    }
+
+    33% {
+      opacity: 0.33;
+    }
+
+    66% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes load3 {
+    0% {
+      opacity: 0.33;
+    }
+
+    33% {
+      opacity: 0;
+    }
+
+    66% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.66;
+    }
+  }
+  .ss-title {
+    width: 10em;
+    font-size: 1.2em;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ccc;
+  }
+</style>
+<div class="splash-screen">
+  <div>
+    <img class="ss-logo" src="/assets/images/logo.svg" />
+    <!-- <img class="title" src="/assets/images/logo-title-mb.png" /> -->
+    <div class="ss-loader">
+      <div class="loader-ball loader-ball-1"></div>
+      <div class="loader-ball loader-ball-2"></div>
+      <div class="loader-ball loader-ball-3"></div>
+    </div>
+  </div>
+  <div class="ss-title">
+    <!-- project-name -->
+  </div>
+</div>
+
     <div id="app" />
   </body>
 </html>
