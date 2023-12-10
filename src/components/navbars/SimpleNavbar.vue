@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { useAppConfig } from "@/composables/useAppConfig";
 
+defineEmits(["click"]);
 const { closeDrawer } = useAppConfig();
+
+function onLinkClick(event, navigate) {
+  closeDrawer();
+  navigate(event);
+}
 
 const links = [
   { name: "home", label: "Home" },
@@ -14,8 +20,8 @@ const links = [
   <nav>
     <ul>
       <li v-for="link in links" :key="link.label">
-        <router-link v-slot="{ navigate }" :to="{ name: link.name }" custom @click="closeDrawer">
-          <a role="link" @click="navigate">{{ link.label }}</a>
+        <router-link v-slot="{ href, navigate }" :to="{ name: link.name }" custom>
+          <a role="link" :href="href" @click="onLinkClick($event, navigate)">{{ link.label }}</a>
         </router-link>
       </li>
     </ul>

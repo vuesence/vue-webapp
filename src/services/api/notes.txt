@@ -1,0 +1,28 @@
+import { jsonRpc } from "#/services/json-rpc/jsonrpc";
+
+async providers() {
+  const providers = await jsonRpc(
+    {
+      method: "utils.resources:list",
+      params: {
+        database: "slotegrator",
+        resource: "provider",
+        // where: "id < 3"
+      },
+    },
+    { uri: "casino.providers:list" },
+  );
+  return providers.map((provider) => {
+    return {
+      ...provider,
+      slug: provider.name.toLowerCase().replaceAll(" ", "-"),
+    };
+  });
+},
+
+  async updateFavourite(params) {
+  return await jsonRpc({
+    method: "casino.favourites:update",
+    params,
+  });
+},
