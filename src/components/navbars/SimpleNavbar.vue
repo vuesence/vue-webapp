@@ -39,7 +39,7 @@ nav {
     padding-left: 0;
     li {
       line-height: 3em;
-      border-bottom: solid 1px rgb(200, 200, 200);
+      border-bottom: 1px solid var(--vp-c-divider);
       a {
         cursor: pointer;
         display: block;

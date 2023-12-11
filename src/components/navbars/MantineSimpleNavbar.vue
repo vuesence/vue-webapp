@@ -4,6 +4,11 @@ import { useAppConfig } from "@/composables/useAppConfig";
 
 const { closeDrawer } = useAppConfig();
 
+function onLinkClick(event, navigate) {
+  closeDrawer();
+  navigate(event);
+}
+
 const links = [
   { name: "home", label: "Home", icon: "home" },
   { name: "about", label: "About", icon: "about" },
@@ -20,9 +25,9 @@ const footerLinks = [
     <div class="main">
       <ul>
         <li v-for="link in links" :key="link.label">
-          <router-link v-slot="{ navigate }" :to="{ name: link.name }" custom @click="closeDrawer">
-            <BaseIcon size="30" :name="link.icon" class="icon" fill1="currentColor" />
-            <a role="link" @click="navigate">{{ link.label }}</a>
+          <router-link v-slot="{ href, navigate }" :to="{ name: link.name }" custom>
+            <BaseIcon size="24" :name="link.icon" class="icon" fill1="currentColor" />
+            <a role="link" :href="href" @click="onLinkClick($event, navigate)">{{ link.label }}</a>
           </router-link>
         </li>
       </ul>
@@ -30,9 +35,9 @@ const footerLinks = [
     <div class="footer">
       <ul>
         <li v-for="link in footerLinks" :key="link.label">
-          <router-link v-slot="{ navigate }" :to="{ name: link.name }" custom @click="closeDrawer">
-            <BaseIcon size="30" :name="link.icon" class="icon" />
-            <a role="link" @click="navigate">{{ link.label }}</a>
+          <router-link v-slot="{ href, navigate }" :to="{ name: link.name }" custom>
+            <BaseIcon size="24" :name="link.icon" class="icon" />
+            <a role="link" :href="href" @click="onLinkClick($event, navigate)">{{ link.label }}</a>
           </router-link>
         </li>
       </ul>
@@ -44,7 +49,6 @@ const footerLinks = [
 .navbar {
   min-width: 220px;
   padding: 1em;
-  border-right: 1px solid #ccc;
 
   .notebook & {
     min-width: 220px;
@@ -57,13 +61,14 @@ const footerLinks = [
 
       li {
         line-height: 3em;
+        padding-left: 1em;
         display: flex;
         align-items: center;
-        color: #888;
-        // border-bottom: solid 1px rgb(200, 200, 200);
+        color: var(--vp-c-text-2);
+        // border-bottom: solid 1px var(--vp-c-divider);
         &:hover {
-          color: #444;
-          background-color: #f9f9f9;
+          color: var(--vp-c-text-1);
+          background-color: var(--vp-c-bg-alt);
         }
 
         a {
@@ -71,6 +76,7 @@ const footerLinks = [
           display: block;
           padding: 0 2em 0 1em;
           color: #888;
+          text-wrap: nowrap;
         }
         // .icon {
         //   color: #444;
@@ -85,7 +91,7 @@ const footerLinks = [
   .footer {
     // padding-top: 1em;
     margin-top: 1em;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--vp-c-divider);
 
   }
 }

@@ -82,20 +82,20 @@ const socials = [
 .footer {
   padding: 1em;
   margin-top: 1rem;
-  border-top: 1px solid #e9ecef;
-  background-color: #f8f9fa;
+  border-top: 1px solid var(--vp-c-border);
+  background-color: var(--vp-c-bg-alt);
 
   .footer-header {
     display: flex;
     justify-content: space-between;
 
     .logo-wrapper {
-      color: rgb(0, 0, 0);
+      color: var(--vp-c-text-2);
       max-width: 200px;
 
       .logo {
         // height: 1.75rem;
-        color: rgb(0, 0, 0);
+        // color: rgb(0, 0, 0);
         max-width: 200px;
         display: flex;
         align-items: center;
@@ -104,7 +104,7 @@ const socials = [
           margin-left: 0.6rem;
           font-size: 1.2rem;
           font-weight: 700;
-          color: #555;
+          color: var(--vp-c-text-1);
         }
       }
 
@@ -128,17 +128,12 @@ const socials = [
         .link {
           display: block;
           appearance: none;
-          background-color: rgba(0, 0, 0, 0);
-          border: 0px none rgb(134, 142, 150);
-          color: #868e96;
-          cursor: pointer;
+          color: var(--vp-c-text-2);
           margin: 5px 0;
-          text-decoration: none;
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          -webkit-tap-highlight-color: var(--vp-c-bg);
           font-size: 0.8rem;
-
           &:hover {
-            text-decoration: underline;
+            color: var(--vp-c-text-1);
           }
         }
       }
@@ -150,9 +145,8 @@ const socials = [
     justify-content: space-between;
     align-items: center;
     margin-top: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-top: 1px solid #777;
+    padding: 1em 0;
+    border-top: 1px solid var(--vp-c-divider);
 
     .title {
       font-size: 0.8em;
@@ -166,24 +160,22 @@ const socials = [
     flex-wrap: nowrap;
     gap: 10px;
     justify-content: flex-end;
-    box-sizing: border-box;
     align-items: center;
 
     button {
       appearance: none;
-      background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
-      border: 1px solid rgb(206, 212, 218);
+      background: var(--vp-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
+      border: 1px solid var(--vp-c-border);
       border-radius: 42px;
-      color: #777;
+      color: var(--vp-c-text-2);
       cursor: pointer;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      background-color: rgb(255, 255, 255);
+      // background-color: var(--vp-c-bg);
       padding: 7px;
       touch-action: manipulation;
-      box-sizing: border-box;
 
       &:hover {
-        background-color: #f8f9fa;
+        background-color: var(--vp-c-bg-soft);
       }
     }
   }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseIcon from "@/components/ui/BaseIcon.vue";
 import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
+import ThemeToggle from "@/components/ui/ThemeToggle.vue";
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
@@ -27,6 +28,7 @@ const links = [
       <RouterLink v-for="link in links" :key="link.title" class="link" :to="link.route">
         {{ link.title }}
       </RouterLink>
+      <ThemeToggle />
     </div>
     <HamburgerIcon v-model="isDrawerOpen" class="drawer-toggle" />
   </header>
@@ -38,16 +40,16 @@ const links = [
   display: flex;
   align-items: center;
   top: 0;
-  height: 2em;
+  height: 4em;
   padding: 15px 20px;
-  background-color: #fff;
+  // background-color: #fff;
   z-index: 3;
   justify-content: space-between;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--vp-c-divider);
   // margin-bottom: 1em;
   .logo {
     // height: 1.75rem;
-    color: rgb(0, 0, 0);
+    // color: rgb(0, 0, 0);
     max-width: 200px;
     display: flex;
     align-items: center;
@@ -55,7 +57,7 @@ const links = [
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #555;
+      color: var(--vp-c-text-1)
     }
   }
   .drawer-toggle {
@@ -68,6 +70,7 @@ const links = [
       display: none;
     }
     display: flex;
+    align-items: center;
     .link {
       font-size: 0.9em;
       font-weight: 500;
@@ -76,9 +79,9 @@ const links = [
       padding: 8px 12px;
       border-radius: 4px;
       text-decoration: none;
-      color: #444;
+      color: var(--vp-c-text-2);
       &:hover {
-        background-color: #eee;
+        background-color: var(--vp-c-bg-soft);
       }
     }
   }

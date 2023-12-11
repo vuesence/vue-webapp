@@ -44,13 +44,6 @@
 </template>
 
 <style lang="scss" scoped>
-/* Footer left */
-/* The company logo */
-/* Footer links */
-/* Footer social icons */
-/* Footer Right */
-/* The contact form */
-/* If you don't want the footer to be responsive, remove these media queries */
 .footer {
   // box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   border-top: 1px solid #999;
@@ -64,15 +57,15 @@
     float: left;
   }
   h3 {
-    color: #333;
-    font: normal 36px "Roboto", cursive;
+    color: var(--vp-c-text-1);
+    font-size: 36px;
     margin: 0 0 10px;
     span {
       color: #5383d3;
     }
   }
   .footer-links {
-    color: #555;
+    color: var(--vp-c-text-2);
     margin: 0 0 10px;
     padding: 0;
     a {
@@ -83,7 +76,7 @@
     }
   }
   .footer-company-name {
-    color: #8f9296;
+    color: var(--vp-c-text-3);
     font-size: 14px;
     font-weight: normal;
     margin: 0;
@@ -94,8 +87,8 @@
       display: inline-block;
       width: 35px;
       height: 35px;
-      cursor: pointer;
-      background-color: #eee;
+      // cursor: pointer;
+      background-color: var(--vp-c-bg-alt);
       border-radius: 2px;
       font-size: 20px;
       color: #777;
@@ -111,7 +104,7 @@
       display: inline-block;
       vertical-align: top;
       margin: 15px 42px 0 0;
-      color: #ffffff;
+      color: var(--vp-c-text-2);
     }
   }
   form {
@@ -119,15 +112,15 @@
     input {
       display: block;
       border-radius: 3px;
-      box-sizing: border-box;
-      background-color: #d6d6d6;
-      box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-      border: none;
+      // box-sizing: border-box;
+      // background-color: #d6d6d6;
+      // box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      // border: none;
       resize: none;
       font: inherit;
-      font-size: 14px;
+      // font-size: 14px;
       font-weight: normal;
-      color: #d1d2d2;
+      // color: #d1d2d2;
       width: 400px;
       padding: 18px;
       height: 55px;
@@ -136,15 +129,15 @@
     textarea {
       display: block;
       border-radius: 3px;
-      box-sizing: border-box;
-      background-color: #d6d6d6;
+      // box-sizing: border-box;
+      // background-color: hsl(0, 0%, 84%);
       box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-      border: none;
+      // border: none;
       resize: none;
       font: inherit;
       font-size: 14px;
       font-weight: normal;
-      color: #d1d2d2;
+      // color: #d1d2d2;
       width: 400px;
       padding: 18px;
       height: 100px;
@@ -152,34 +145,15 @@
     }
     button {
       border-radius: 3px;
-      background-color: #d6d6d6;
-      color: #555;
-      border: 0;
+      background-color: var(--vp-c-bg-alt);
+      // color: #555;
+      // border: 0;
       padding: 15px 50px;
       font-weight: bold;
       float: right;
     }
   }
-  &::-webkit-input-placeholder {
-    color: #5c666b;
-  }
-  &::-moz-placeholder {
-    color: #5c666b;
-    opacity: 1;
-  }
-  &:-ms-input-placeholder {
-    color: #5c666b;
-  }
-}
-section {
-  width: 100%;
-  display: inline-block;
-  background: #ccc;
-  height: 60vh;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
+
 }
 @media (max-width: 1000px) {
   .footer-distributed {

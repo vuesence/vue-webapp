@@ -69,7 +69,7 @@ const socials = [
 <style lang="scss" scoped>
 .footer {
   margin-top: 1rem;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid var(--vp-c-border);
   // .footer-inner {
   align-items: none;
   display: flex;
@@ -79,15 +79,16 @@ const socials = [
 
   .logo {
     // height: 1.75rem;
-    color: rgb(0, 0, 0);
+    // color: rgb(0, 0, 0);
     max-width: 200px;
     display: flex;
     align-items: center;
+
     .title {
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #555;
+      color: var(--vp-c-text-1);
     }
   }
 
@@ -100,18 +101,15 @@ const socials = [
     align-items: center;
 
     .link {
+      display: block;
       appearance: none;
-      background-color: rgba(0, 0, 0, 0);
-      border: 0px none rgb(134, 142, 150);
-      color: #868e96;
-      cursor: pointer;
-      margin: 5px;
-      text-decoration: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      color: var(--vp-c-text-2);
+      margin: 5px 10px;
+      -webkit-tap-highlight-color: var(--vp-c-bg);
       font-size: 0.8rem;
 
       &:hover {
-        text-decoration: underline;
+        color: var(--vp-c-text-1);
       }
     }
   }
@@ -123,30 +121,29 @@ const socials = [
     flex-wrap: nowrap;
     gap: 10px;
     justify-content: flex-end;
-    box-sizing: border-box;
     align-items: center;
 
     button {
       appearance: none;
-      background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
-      border: 1px solid rgb(206, 212, 218);
+      background: var(--vp-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
+      border: 1px solid var(--vp-c-border);
       border-radius: 42px;
-      color: #777;
+      color: var(--vp-c-text-2);
       cursor: pointer;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      background-color: rgb(255, 255, 255);
+      -webkit-tap-highlight-color: var(--vp-c-bg);
+      // background-color: var(--vp-c-bg);
       padding: 7px;
       touch-action: manipulation;
-      box-sizing: border-box;
 
       &:hover {
-        background-color: #f8f9fa;
+        background-color: var(--vp-c-bg-soft);
       }
     }
   }
 }
 
-.mobile, .tablet {
+.mobile,
+.tablet {
   .footer {
     flex-direction: column;
 

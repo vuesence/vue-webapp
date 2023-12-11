@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
+import ThemeToggle from "@/components/ui/ThemeToggle.vue";
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
@@ -11,6 +12,7 @@ const { isDrawerOpen } = useAppConfig();
     <div class="title">
       Acme Corporation
     </div>
+    <ThemeToggle />
   </header>
 </template>
 
@@ -19,10 +21,11 @@ const { isDrawerOpen } = useAppConfig();
   position: sticky;
   display: flex;
   align-items: center;
-  top: 0;
-  height: 2em;
+  justify-content: space-between;
+  // top: 0;
+  height: 4em;
   padding: 15px 20px;
-  background-color: #eee;
+  // background-color: #eee;
   z-index: 3;
   .drawer-toggle {
     .notebook &, .desktop & {

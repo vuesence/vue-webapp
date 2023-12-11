@@ -243,11 +243,12 @@ onUnmounted(() => {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #eee;
+    background-color: var(--vp-sidebar-bg-color);
     .notebook &,
     .desktop & {
       position: initial;
-      background-color: white;
+      // background-color: white;
+      background-color: var(--vp-sidebar-bg-color);
     }
     .touch-slideout-drawer {
       display: block;

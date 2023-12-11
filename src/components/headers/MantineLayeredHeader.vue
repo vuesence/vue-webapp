@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import BaseIcon from "@/components/ui/BaseIcon.vue";
 import HamburgerIcon from "@/components/ui/HamburgerIcon.vue";
+import ThemeToggle from "@/components/ui/ThemeToggle.vue";
 import { useAppConfig } from "@/composables/useAppConfig";
 
 const { isDrawerOpen } = useAppConfig();
@@ -30,20 +31,26 @@ const sublinks = [
         </div>
       </div>
     </RouterLink>
-    <div class="links-wrapper">
-      <div class="sublinks">
-        <RouterLink v-for="link in sublinks" :key="link.title" class="link" :to="link.route">
-          {{ link.title }}
-        </RouterLink>
+    <div class="right-panel">
+      <div class="links-wrapper">
+        <div class="sublinks">
+          <RouterLink v-for="link in sublinks" :key="link.title" class="link" :to="link.route">
+            {{ link.title }}
+          </RouterLink>
+        </div>
+        <div class="links">
+          <RouterLink
+            v-for="link in links"
+            :key="link.title"
+            class="link"
+            :class="{ active: link.title === 'Documentation' }"
+            :to="link.route"
+          >
+            {{ link.title }}
+          </RouterLink>
+        </div>
       </div>
-      <div class="links">
-        <RouterLink
-          v-for="link in links" :key="link.title" class="link"
-          :class="{ active: link.title === 'Documentation' }" :to="link.route"
-        >
-          {{ link.title }}
-        </RouterLink>
-      </div>
+      <ThemeToggle />
     </div>
     <HamburgerIcon v-model="isDrawerOpen" class="drawer-toggle" />
   </header>
@@ -57,15 +64,15 @@ const sublinks = [
   top: 0;
   height: 6em;
   padding: 0 20px 0;
-  background-color: #fff;
+  // background-color: #fff;
   z-index: 3;
   justify-content: space-between;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--vp-c-border);
 
   // margin-bottom: 1em;
   .logo {
     // height: 1.75rem;
-    color: rgb(0, 0, 0);
+    // color: rgb(0, 0, 0);
     max-width: 200px;
     display: flex;
     align-items: center;
@@ -74,51 +81,54 @@ const sublinks = [
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #555;
+      color: var(--vp-c-text-1);
     }
   }
 
   .drawer-toggle {
-
     .notebook &,
     .desktop & {
       display: none;
     }
   }
-
-  .links-wrapper {
+  .right-panel {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-transform: uppercase;
+    align-items: center;
     align-self: flex-end;
-    margin-bottom: -1px;
 
-    .mobile &,
-    .tablet & {
-      display: none;
-    }
-
-    .sublinks {
+    .links-wrapper {
       display: flex;
-      margin-bottom: 7px;
+      flex-direction: column;
+      align-items: flex-end;
+      text-transform: uppercase;
+      align-self: flex-end;
+      margin-bottom: -1px;
 
-      .link {
-        font-size: 0.7em;
-        font-weight: 300;
-        display: block;
-        line-height: 1;
-        padding: 8px 12px;
-        border-radius: 4px;
-        text-decoration: none;
-        color: #888;
+      .mobile &,
+      .tablet & {
+        display: none;
+      }
 
-        &:hover {
-          color: #222;
+      .sublinks {
+        display: flex;
+        margin-bottom: 7px;
+
+        .link {
+          font-size: 0.7em;
+          font-weight: 300;
+          display: block;
+          line-height: 1;
+          padding: 8px 12px;
+          border-radius: 4px;
+          text-decoration: none;
+          color: var(--vp-c-text-3);
+
+          &:hover {
+            color: var(--vp-c-text-1)
+          }
         }
       }
     }
-
   }
 
   .links {
@@ -132,15 +142,15 @@ const sublinks = [
       padding: 8px 12px;
       // border-radius: 4px;
       text-decoration: none;
-      color: #777;
+      color: var(--vp-c-text-2);
 
       &:hover {
-        color: #111;
+        color: var(--vp-c-text-1);
       }
 
       &.active {
-        color: #111;
-        border-bottom: 2px solid #228be6;
+        color: var(--vp-c-text-1);
+        border-bottom: 2px solid var(--vp-c-brand-1);
       }
     }
   }
