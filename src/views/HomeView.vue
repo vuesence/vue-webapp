@@ -21,6 +21,7 @@ const options: IOption[] = [];
       <li
         v-for="option in options"
         :key="option.name"
+        :class="{ dimmed: option.value === 'false' }"
       >
         <span class="name">{{ option.name }}</span>
         <span class="value">{{ option.value }}</span>
@@ -39,6 +40,9 @@ ul {
     display: flex;
     &:nth-child(even) {
       background-color: var(--vp-c-bg-alt);
+    }
+    &.dimmed {
+      opacity: 0.5;
     }
     span {
       width: 50%;
