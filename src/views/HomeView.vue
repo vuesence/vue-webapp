@@ -20,28 +20,47 @@ const options: IOption[] = [];
 
 <template>
   <div>
-    <h3>Congratulations with scaffolding your vue webapp!</h3>
-    <p v-if="options.length">
+    <h2>Congratulations with scaffolding your vue webapp!</h2>
+    <hr>
+    <h3 v-if="options.length">
       Selected options:
-    </p>
+    </h3>
     <ul>
       <li
         v-for="option in options"
         :key="option.name"
       >
-        {{ `${option.name}: ${option.value}` }}
+        <span class="name">{{ option.name }}</span>
+        <span class="value">{{ option.value }}</span>
       </li>
     </ul>
-    <p><b>API data:</b> {{ apiData }}</p>
-    <p class="json-rpc">
-      <b>JSON-RPC data:</b> {{ jsonRpcData }}
+    <hr />
+    <h3>API data:</h3> <p>{{ apiData }}</p>
+    <hr />
+    <h3>JSON-RPC data:</h3>
+    <p class="json-rpc-data">
+      {{ jsonRpcData }}
     </p>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.json-rpc {
-  max-width: 300px;
+ul {
+  border: 1px solid var(--vp-c-divider);
+  margin-bottom: 2em;
+  li {
+    padding: .4rem;
+    display: flex;
+    &:nth-child(even) {
+      background-color: var(--vp-c-bg-alt);
+    }
+    span {
+      width: 50%;
+    }
+  }
+}
+.json-rpc-data {
+  max-width: 80vw;
   overflow-x: auto;
 }
 </style>
