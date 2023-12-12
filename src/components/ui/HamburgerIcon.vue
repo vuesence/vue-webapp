@@ -10,10 +10,8 @@ const modelValue = defineModel();
 
 <style lang="scss" scoped>
 button {
-  color: black;
-  // background-color: white;
-  width: 34px;
-  height: 34px;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   padding: 5px;
   border: 0px;
@@ -23,14 +21,14 @@ button {
     // outline: 0px solid transparent;
     transition: all .3s ease;
     position: relative;
-    width: 24px;
+    width: 1.7rem;
     height: 2px;
-    background-color: black;
+    background-color: var(--vp-c-text-1);
     &:before, &:after {
-      width: 24px;
+      width: 1.7rem;
       height: 2px;
       transition: all .3s ease;
-      background-color: black;
+      background-color: var(--vp-c-text-1);
       content: "";
       left: 0;
       position: absolute;

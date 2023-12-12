@@ -1,7 +1,9 @@
 @import "./vars.css";
 // @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
+  // font-family: 'Roboto', sans-serif;
   // font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   // line-height: 1.5;
   // font-weight: 400;
@@ -16,6 +18,14 @@
   // -moz-osx-font-smoothing: grayscale;
   // -webkit-text-size-adjust: 100%;
 }
+
+@media screen and (min-width: 960px) {
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+}
+
 
 *,
 ::before,
@@ -97,7 +107,7 @@ input,
 optgroup,
 select,
 textarea {
-  border: 0;
+  border: 1px solid var(--vp-c-border);
   padding: 0;
   line-height: inherit;
   color: inherit;
@@ -164,8 +174,8 @@ select {
 
 #app {
   // min-height: 100vh;
-  width: 1280px;
-  max-width: 1280px;
+  width: var(--vp-layout-max-width);
+  max-width: var(--vp-layout-max-width);
   margin: 0 auto;
   // padding: 2em 2em 0;
   // text-align: center;

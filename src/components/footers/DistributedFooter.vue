@@ -61,7 +61,7 @@
     font-size: 36px;
     margin: 0 0 10px;
     span {
-      color: #5383d3;
+      color: var(--vp-c-brand-1);
     }
   }
   .footer-links {
@@ -91,7 +91,7 @@
       background-color: var(--vp-c-bg-alt);
       border-radius: 2px;
       font-size: 20px;
-      color: #777;
+      color: var(--vp-c-text-2);
       text-align: center;
       line-height: 35px;
       margin-right: 3px;

@@ -20,14 +20,14 @@ const isDrawerOpen = defineModel<boolean>();
   // top: 0;
   left: 0;
   height: 100%;
-  min-height: 500px;
+  // min-height: 500px;
   // min-width: 270px;
   translate: -300px 0;
   transition: translate 0.2s ease;
   // background-color: #eee;
   // background-color: white;
-  // background-color: var(--vp-sidebar-bg-color);
-  border-bottom: var(--vp-c-border) 1px solid;
+  background-color: var(--vp-c-bg);
+  // border-bottom: var(--vp-c-border) 1px solid;
   border-right: 1px solid var(--vp-c-divider);
   .notebook &,
   .desktop & {

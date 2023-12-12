@@ -44,9 +44,9 @@ nav {
         cursor: pointer;
         display: block;
         padding: 0 2em;
-        color: #888;
+        color: var(--vp-c-text-2)
         &:hover {
-          color: #444;
+          color: var(--vp-c-text-1)
         }
       }
     }

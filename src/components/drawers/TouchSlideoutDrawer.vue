@@ -232,6 +232,7 @@ onUnmounted(() => {
   will-change: transform;
   transition-property: transform;
   transition-timing-function: ease;
+  background-color: var(--vp-c-bg);
   .notebook &,
   .desktop & {
     position: initial;
@@ -243,7 +244,7 @@ onUnmounted(() => {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--vp-sidebar-bg-color);
+    background-color: var(--vp-c-bg-alt);
     .notebook &,
     .desktop & {
       position: initial;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainLayout from "./layouts/MainLayout.vue";
+import AppLayout from "./layouts/MainLayout.vue";
 import { useScreenWidth } from "@/composables/useScreenWidth";
 import { useSplashScreen } from "@/composables/useSplashScreen";
 
@@ -14,7 +14,7 @@ useSplashScreen();
 </script>
 
 <template>
-  <MainLayout />
+  <AppLayout />
 </template>
 
 <style lang="scss">

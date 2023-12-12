@@ -26,5 +26,11 @@ export const htmlInjectionConfig: IHtmlInjectionConfig = {
       type: "js",
       injectTo: "head",
     },
+    {
+      name: "Google analytics",
+      path: "./src/utils/injections/gtag.html",
+      type: "raw",
+      injectTo: "body",
+    },
   ],
 };

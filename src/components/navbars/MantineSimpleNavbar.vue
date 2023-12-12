@@ -75,11 +75,11 @@ const footerLinks = [
           cursor: pointer;
           display: block;
           padding: 0 2em 0 1em;
-          color: #888;
+          color: var(--vp-c-text-2);
           text-wrap: nowrap;
         }
         // .icon {
-        //   color: #444;
+        //   color: var(--vp-c-text-1)
         // }
       }
 
@@ -91,6 +91,7 @@ const footerLinks = [
   .footer {
     // padding-top: 1em;
     margin-top: 1em;
+    padding-top: 0.7rem;
     border-top: 1px solid var(--vp-c-divider);
 
   }

@@ -22,10 +22,10 @@ const { isDrawerOpen } = useAppConfig();
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // top: 0;
+  top: 0;
   height: 4em;
   padding: 15px 20px;
-  // background-color: #eee;
+  background-color: var(--vp-c-bg);
   z-index: 3;
   .drawer-toggle {
     .notebook &, .desktop & {

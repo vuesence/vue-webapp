@@ -3,7 +3,9 @@
 
 <template>
   <main class="content-pane">
-    <router-view />
+    <Transition>
+      <router-view />
+    </Transition>
 
     <div class="content">
     </div>
@@ -13,5 +15,14 @@
 <style lang="scss" scoped>
 .content-pane {
   padding: 1em 2em;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

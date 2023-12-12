@@ -68,10 +68,9 @@ async function submitForm() {
   textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
-    outline-color: #ccc;
+    // border: 1px solid var(--vp-c-border);
+    outline-color: var(--vp-c-border-alt);
     border-radius: 4px;
-    box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
@@ -79,7 +78,7 @@ async function submitForm() {
 
     &:focus,
     &:focus-visible {
-      outline-color: #6e478e;
+      outline-color: var(--vp-c-border-alt);
     }
   }
 
@@ -89,25 +88,22 @@ async function submitForm() {
 
   /* Style the submit button with a specific background color etc */
   input[type="submit"] {
-    background-color: #45166b;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+    background-color: var(--vp-c-brand-1);
+    color: var(--vp-c-bg-alt);
+    padding: 10px 30px;
+    // border: none;
+    font-size: 1.1rem;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 
-    &:hover {
-      background-color: #6e478e;
-    }
+    // &:hover {
+    //   background-color: #6e478e;
+    // }
 
     &[disabled] {
       opacity: 0.5;
       cursor: unset;
-
-      &:hover {
-        background-color: #45166b;
-      }
     }
   }
 }

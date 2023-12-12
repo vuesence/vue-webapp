@@ -33,6 +33,15 @@ const options: IOption[] = [];
       </li>
     </ul>
     <p><b>API data:</b> {{ apiData }}</p>
-    <p><b>JSON-RPC data:</b> {{ jsonRpcData }}</p>
+    <p class="json-rpc">
+      <b>JSON-RPC data:</b> {{ jsonRpcData }}
+    </p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.json-rpc {
+  max-width: 300px;
+  overflow-x: auto;
+}
+</style>

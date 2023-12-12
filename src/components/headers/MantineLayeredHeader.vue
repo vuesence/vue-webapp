@@ -64,7 +64,7 @@ const sublinks = [
   top: 0;
   height: 6em;
   padding: 0 20px 0;
-  // background-color: #fff;
+  background-color: var(--vp-c-bg);
   z-index: 3;
   justify-content: space-between;
   border-bottom: 1px solid var(--vp-c-border);
