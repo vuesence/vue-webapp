@@ -55,11 +55,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   line-height: 24px;
-  font-family: var(--vp-font-family-base);
+  font-family: var(--vwa-font-family-base);
   font-size: 16px;
   font-weight: 400;
-  color: var(--vp-c-text-1);
-  background-color: var(--vp-c-bg);
+  color: var(--vwa-c-text-1);
+  background-color: var(--vwa-c-bg);
   direction: ltr;
   font-synthesis: style;
   text-rendering: optimizeLegibility;
@@ -107,7 +107,7 @@ input,
 optgroup,
 select,
 textarea {
-  border: 1px solid var(--vp-c-border);
+  border: 1px solid var(--vwa-c-border);
   padding: 0;
   line-height: inherit;
   color: inherit;
@@ -146,17 +146,17 @@ input, textarea {
 }
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: var(--vp-c-text-3);
+  color: var(--vwa-c-text-3);
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: var(--vp-c-text-3);
+  color: var(--vwa-c-text-3);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--vp-c-text-3);
+  color: var(--vwa-c-text-3);
 }
 
 input::-webkit-outer-spin-button,
@@ -174,8 +174,8 @@ select {
 
 #app {
   // min-height: 100vh;
-  width: var(--vp-layout-max-width);
-  max-width: var(--vp-layout-max-width);
+  width: var(--vwa-layout-max-width);
+  max-width: var(--vwa-layout-max-width);
   margin: 0 auto;
   // padding: 2em 2em 0;
   // text-align: center;

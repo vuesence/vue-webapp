@@ -57,15 +57,15 @@
     float: left;
   }
   h3 {
-    color: var(--vp-c-text-1);
+    color: var(--vwa-c-text-1);
     font-size: 36px;
     margin: 0 0 10px;
     span {
-      color: var(--vp-c-brand-1);
+      color: var(--vwa-c-brand-1);
     }
   }
   .footer-links {
-    color: var(--vp-c-text-2);
+    color: var(--vwa-c-text-2);
     margin: 0 0 10px;
     padding: 0;
     a {
@@ -76,7 +76,7 @@
     }
   }
   .footer-company-name {
-    color: var(--vp-c-text-3);
+    color: var(--vwa-c-text-3);
     font-size: 14px;
     font-weight: normal;
     margin: 0;
@@ -88,10 +88,10 @@
       width: 35px;
       height: 35px;
       // cursor: pointer;
-      background-color: var(--vp-c-bg-alt);
+      background-color: var(--vwa-c-bg-alt);
       border-radius: 2px;
       font-size: 20px;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       text-align: center;
       line-height: 35px;
       margin-right: 3px;
@@ -104,7 +104,7 @@
       display: inline-block;
       vertical-align: top;
       margin: 15px 42px 0 0;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
     }
   }
   form {
@@ -145,7 +145,7 @@
     }
     button {
       border-radius: 3px;
-      background-color: var(--vp-c-bg-alt);
+      background-color: var(--vwa-c-bg-alt);
       // color: #555;
       // border: 0;
       padding: 15px 50px;

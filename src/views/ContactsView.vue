@@ -68,8 +68,8 @@ async function submitForm() {
   textarea {
     width: 100%;
     padding: 12px;
-    // border: 1px solid var(--vp-c-border);
-    outline-color: var(--vp-c-border-alt);
+    // border: 1px solid var(--vwa-c-border);
+    outline-color: var(--vwa-c-border-alt);
     border-radius: 4px;
     margin-top: 6px;
     margin-bottom: 16px;
@@ -78,7 +78,7 @@ async function submitForm() {
 
     &:focus,
     &:focus-visible {
-      outline-color: var(--vp-c-border-alt);
+      outline-color: var(--vwa-c-border-alt);
     }
   }
 
@@ -88,8 +88,8 @@ async function submitForm() {
 
   /* Style the submit button with a specific background color etc */
   input[type="submit"] {
-    background-color: var(--vp-c-brand-1);
-    color: var(--vp-c-bg-alt);
+    background-color: var(--vwa-c-brand-1);
+    color: var(--vwa-c-bg-alt);
     padding: 10px 30px;
     // border: none;
     font-size: 1.1rem;

@@ -42,10 +42,10 @@ const links = [
   top: 0;
   height: 4em;
   padding: 15px 20px;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vwa-c-bg);
   z-index: 3;
   justify-content: space-between;
-  border-bottom: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vwa-c-divider);
   // margin-bottom: 1em;
   .logo {
     // height: 1.75rem;
@@ -57,7 +57,7 @@ const links = [
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--vp-c-text-1)
+      color: var(--vwa-c-text-1)
     }
   }
   .drawer-toggle {
@@ -79,9 +79,9 @@ const links = [
       padding: 8px 12px;
       border-radius: 4px;
       text-decoration: none;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       &:hover {
-        background-color: var(--vp-c-bg-soft);
+        background-color: var(--vwa-c-bg-soft);
       }
     }
   }

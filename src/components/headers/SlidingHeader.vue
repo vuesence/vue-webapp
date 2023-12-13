@@ -41,22 +41,22 @@ onUnmounted(() => {
 .header {
   position: sticky;
   z-index: 3;
-  background-color: var(--vp-c-bg-alt);
+  background-color: var(--vwa-c-bg-alt);
   top: 0;
   transition: 0.3s;
 
   &.first-header {
-    background-color: var(--vp-c-bg-alt);
+    background-color: var(--vwa-c-bg-alt);
     height: 60px;
   }
 
   &.second-header {
-    background-color: var(--vp-c-bg-soft);
+    background-color: var(--vwa-c-bg-soft);
     opacity: 0.8;
     height: 100px;
     // just for the demo
     :deep(.header) {
-      background-color: var(--vp-c-bg-alt) !important;
+      background-color: var(--vwa-c-bg-alt) !important;
     }
   }
 

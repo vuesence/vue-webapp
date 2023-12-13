@@ -32,14 +32,14 @@ const options: IOption[] = [];
 
 <style lang="scss" scoped>
 ul {
-  color: var(--vp-c-text-2);
-  border: 1px solid var(--vp-c-divider);
+  color: var(--vwa-c-text-2);
+  border: 1px solid var(--vwa-c-divider);
   margin-bottom: 2em;
   li {
     padding: .4rem;
     display: flex;
     &:nth-child(even) {
-      background-color: var(--vp-c-bg-alt);
+      background-color: var(--vwa-c-bg-alt);
     }
     &.dimmed {
       opacity: 0.5;

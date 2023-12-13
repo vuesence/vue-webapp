@@ -39,14 +39,14 @@ nav {
     padding-left: 0;
     li {
       line-height: 3em;
-      border-bottom: 1px solid var(--vp-c-divider);
+      border-bottom: 1px solid var(--vwa-c-divider);
       a {
         cursor: pointer;
         display: block;
         padding: 0 2em;
-        color: var(--vp-c-text-2)
+        color: var(--vwa-c-text-2)
         &:hover {
-          color: var(--vp-c-text-1)
+          color: var(--vwa-c-text-1)
         }
       }
     }

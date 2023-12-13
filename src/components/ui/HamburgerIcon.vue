@@ -23,12 +23,12 @@ button {
     position: relative;
     width: 1.7rem;
     height: 2px;
-    background-color: var(--vp-c-text-1);
+    background-color: var(--vwa-c-text-1);
     &:before, &:after {
       width: 1.7rem;
       height: 2px;
       transition: all .3s ease;
-      background-color: var(--vp-c-text-1);
+      background-color: var(--vwa-c-text-1);
       content: "";
       left: 0;
       position: absolute;

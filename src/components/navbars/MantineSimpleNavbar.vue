@@ -64,22 +64,22 @@ const footerLinks = [
         padding-left: 1em;
         display: flex;
         align-items: center;
-        color: var(--vp-c-text-2);
-        // border-bottom: solid 1px var(--vp-c-divider);
+        color: var(--vwa-c-text-2);
+        // border-bottom: solid 1px var(--vwa-c-divider);
         &:hover {
-          color: var(--vp-c-text-1);
-          background-color: var(--vp-c-bg-alt);
+          color: var(--vwa-c-text-1);
+          background-color: var(--vwa-c-bg-alt);
         }
 
         a {
           cursor: pointer;
           display: block;
           padding: 0 2em 0 1em;
-          color: var(--vp-c-text-2);
+          color: var(--vwa-c-text-2);
           text-wrap: nowrap;
         }
         // .icon {
-        //   color: var(--vp-c-text-1)
+        //   color: var(--vwa-c-text-1)
         // }
       }
 
@@ -92,7 +92,7 @@ const footerLinks = [
     // padding-top: 1em;
     margin-top: 1em;
     padding-top: 0.7rem;
-    border-top: 1px solid var(--vp-c-divider);
+    border-top: 1px solid var(--vwa-c-divider);
 
   }
 }

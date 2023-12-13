@@ -9,10 +9,10 @@
 <style lang="scss" scoped>
 .footer {
   padding: 1.5em 0 0.5em;
-  border-top: 1px solid var(--vp-c-divider);
+  border-top: 1px solid var(--vwa-c-divider);
   margin: 2em auto 0;
   // width: 90vw;
-  color: var(--vp-c-text-3);
+  color: var(--vwa-c-text-3);
   text-align: center;
 
   p {

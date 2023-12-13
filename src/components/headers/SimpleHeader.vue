@@ -25,7 +25,7 @@ const { isDrawerOpen } = useAppConfig();
   top: 0;
   height: 4em;
   padding: 15px 20px;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vwa-c-bg);
   z-index: 3;
   .drawer-toggle {
     .notebook &, .desktop & {

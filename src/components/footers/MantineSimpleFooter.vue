@@ -69,7 +69,7 @@ const socials = [
 <style lang="scss" scoped>
 .footer {
   margin-top: 1rem;
-  border-top: 1px solid var(--vp-c-border);
+  border-top: 1px solid var(--vwa-c-border);
   // .footer-inner {
   align-items: none;
   display: flex;
@@ -88,7 +88,7 @@ const socials = [
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--vp-c-text-1);
+      color: var(--vwa-c-text-1);
     }
   }
 
@@ -103,13 +103,13 @@ const socials = [
     .link {
       display: block;
       appearance: none;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       margin: 5px 10px;
-      -webkit-tap-highlight-color: var(--vp-c-bg);
+      -webkit-tap-highlight-color: var(--vwa-c-bg);
       font-size: 0.8rem;
 
       &:hover {
-        color: var(--vp-c-text-1);
+        color: var(--vwa-c-text-1);
       }
     }
   }
@@ -125,18 +125,18 @@ const socials = [
 
     button {
       appearance: none;
-      background: var(--vp-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
-      border: 1px solid var(--vp-c-border);
+      background: var(--vwa-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
+      border: 1px solid var(--vwa-c-border);
       border-radius: 42px;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       cursor: pointer;
-      -webkit-tap-highlight-color: var(--vp-c-bg);
-      // background-color: var(--vp-c-bg);
+      -webkit-tap-highlight-color: var(--vwa-c-bg);
+      // background-color: var(--vwa-c-bg);
       padding: 7px;
       touch-action: manipulation;
 
       &:hover {
-        background-color: var(--vp-c-bg-soft);
+        background-color: var(--vwa-c-bg-soft);
       }
     }
   }

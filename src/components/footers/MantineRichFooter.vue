@@ -82,15 +82,15 @@ const socials = [
 .footer {
   padding: 1em;
   margin-top: 1rem;
-  border-top: 1px solid var(--vp-c-border);
-  background-color: var(--vp-c-bg-alt);
+  border-top: 1px solid var(--vwa-c-border);
+  background-color: var(--vwa-c-bg-alt);
 
   .footer-header {
     display: flex;
     justify-content: space-between;
 
     .logo-wrapper {
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       max-width: 200px;
 
       .logo {
@@ -104,7 +104,7 @@ const socials = [
           margin-left: 0.6rem;
           font-size: 1.2rem;
           font-weight: 700;
-          color: var(--vp-c-text-1);
+          color: var(--vwa-c-text-1);
         }
       }
 
@@ -128,12 +128,12 @@ const socials = [
         .link {
           display: block;
           appearance: none;
-          color: var(--vp-c-text-2);
+          color: var(--vwa-c-text-2);
           margin: 5px 0;
-          -webkit-tap-highlight-color: var(--vp-c-bg);
+          -webkit-tap-highlight-color: var(--vwa-c-bg);
           font-size: 0.8rem;
           &:hover {
-            color: var(--vp-c-text-1);
+            color: var(--vwa-c-text-1);
           }
         }
       }
@@ -146,7 +146,7 @@ const socials = [
     align-items: center;
     margin-top: 2em;
     padding: 1em 0;
-    border-top: 1px solid var(--vp-c-divider);
+    border-top: 1px solid var(--vwa-c-divider);
 
     .title {
       font-size: 0.8em;
@@ -164,18 +164,18 @@ const socials = [
 
     button {
       appearance: none;
-      background: var(--vp-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
-      border: 1px solid var(--vp-c-border);
+      background: var(--vwa-c-bg) none repeat scroll 0% 0% / auto padding-box border-box;
+      border: 1px solid var(--vwa-c-border);
       border-radius: 42px;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
       cursor: pointer;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      // background-color: var(--vp-c-bg);
+      // background-color: var(--vwa-c-bg);
       padding: 7px;
       touch-action: manipulation;
 
       &:hover {
-        background-color: var(--vp-c-bg-soft);
+        background-color: var(--vwa-c-bg-soft);
       }
     }
   }

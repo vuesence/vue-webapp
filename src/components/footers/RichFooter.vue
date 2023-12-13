@@ -106,8 +106,8 @@
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
   // color: #2f2f2f;
-  background-color: var(--vp-c-bg-alt);
-  border-top: 1px solid var(--vp-c-border);
+  background-color: var(--vwa-c-bg-alt);
+  border-top: 1px solid var(--vwa-c-border);
 
   >* {
     flex: 1 100%;
@@ -115,7 +115,7 @@
 
   address {
     font-style: normal;
-    color: var(--vp-c-text-3);
+    color: var(--vwa-c-text-3);
   }
 
   ul {
@@ -163,7 +163,7 @@
   max-width: max-content;
   // background-color: rgb(33, 33, 33, 0.07);
   // border-radius: 100px;
-  color: var(--vp-c-text-2);
+  color: var(--vwa-c-text-2);
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
@@ -182,7 +182,7 @@
 
 .nav__ul {
   a {
-    color: var(--vp-c-text-2);
+    color: var(--vwa-c-text-2);
     font-weight: 400;
   }
 }

@@ -64,10 +64,10 @@ const sublinks = [
   top: 0;
   height: 6em;
   padding: 0 20px 0;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vwa-c-bg);
   z-index: 3;
   justify-content: space-between;
-  border-bottom: 1px solid var(--vp-c-border);
+  border-bottom: 1px solid var(--vwa-c-border);
 
   // margin-bottom: 1em;
   .logo {
@@ -81,7 +81,7 @@ const sublinks = [
       margin-left: 0.6rem;
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--vp-c-text-1);
+      color: var(--vwa-c-text-1);
     }
   }
 
@@ -121,10 +121,10 @@ const sublinks = [
           padding: 8px 12px;
           border-radius: 4px;
           text-decoration: none;
-          color: var(--vp-c-text-3);
+          color: var(--vwa-c-text-3);
 
           &:hover {
-            color: var(--vp-c-text-1)
+            color: var(--vwa-c-text-1)
           }
         }
       }
@@ -142,15 +142,15 @@ const sublinks = [
       padding: 8px 12px;
       // border-radius: 4px;
       text-decoration: none;
-      color: var(--vp-c-text-2);
+      color: var(--vwa-c-text-2);
 
       &:hover {
-        color: var(--vp-c-text-1);
+        color: var(--vwa-c-text-1);
       }
 
       &.active {
-        color: var(--vp-c-text-1);
-        border-bottom: 2px solid var(--vp-c-brand-1);
+        color: var(--vwa-c-text-1);
+        border-bottom: 2px solid var(--vwa-c-brand-1);
       }
     }
   }

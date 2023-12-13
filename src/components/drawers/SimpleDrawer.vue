@@ -26,9 +26,9 @@ const isDrawerOpen = defineModel<boolean>();
   transition: translate 0.2s ease;
   // background-color: #eee;
   // background-color: white;
-  background-color: var(--vp-c-bg);
-  // border-bottom: var(--vp-c-border) 1px solid;
-  border-right: 1px solid var(--vp-c-divider);
+  background-color: var(--vwa-c-bg);
+  // border-bottom: var(--vwa-c-border) 1px solid;
+  border-right: 1px solid var(--vwa-c-divider);
   .notebook &,
   .desktop & {
     position: initial;

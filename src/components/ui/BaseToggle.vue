@@ -17,11 +17,11 @@
   height: 22px;
   flex-shrink: 0;
   cursor: pointer;
-  border: 1px solid var(--vp-input-border-color);
-  background-color: var(--vp-input-switch-bg-color);
+  border: 1px solid var(--vwa-input-border-color);
+  background-color: var(--vwa-input-switch-bg-color);
   transition: border-color 0.25s !important;
   &:hover {
-    border-color: var(--vp-c-brand-1);
+    border-color: var(--vwa-c-brand-1);
   }
   .check {
     position: absolute;
@@ -31,8 +31,8 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: var(--vp-c-neutral-inverse);
-    box-shadow: var(--vp-shadow-1);
+    background-color: var(--vwa-c-neutral-inverse);
+    box-shadow: var(--vwa-shadow-1);
     transition: transform 0.25s !important;
   }
 
@@ -52,11 +52,11 @@
   left: 3px;
   width: 12px;
   height: 12px;
-  fill: var(--vp-c-text-2);
+  fill: var(--vwa-c-text-2);
 }
 
 .dark .icon :deep(svg) {
-  fill: var(--vp-c-text-1);
+  fill: var(--vwa-c-text-1);
   transition: opacity 0.25s !important;
 }
 </style>

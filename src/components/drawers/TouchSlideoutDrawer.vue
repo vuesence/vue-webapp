@@ -232,7 +232,7 @@ onUnmounted(() => {
   will-change: transform;
   transition-property: transform;
   transition-timing-function: ease;
-  background-color: var(--vp-c-bg);
+  background-color: var(--vwa-c-bg);
   .notebook &,
   .desktop & {
     position: initial;
@@ -244,12 +244,12 @@ onUnmounted(() => {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--vp-c-bg-alt);
+    background-color: var(--vwa-c-bg-alt);
     .notebook &,
     .desktop & {
       position: initial;
       // background-color: white;
-      background-color: var(--vp-sidebar-bg-color);
+      background-color: var(--vwa-sidebar-bg-color);
     }
     .touch-slideout-drawer {
       display: block;
