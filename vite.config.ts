@@ -12,11 +12,7 @@ export default defineConfig({
     target: "esnext",
   },
   plugins: [
-    vue({
-      script: {
-        defineModel: true,
-      },
-    }),
+    vue(),
     htmlInjectionPlugin(htmlInjectionConfig),
   ],
   resolve: {
