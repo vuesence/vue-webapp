@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+// i18n placeholder 1
 
 interface IOption {
   name: string
@@ -27,6 +27,7 @@ const options: IOption[] = [];
         <span class="value">{{ option.value }}</span>
       </li>
     </ul>
+    <!-- i18n placeholder 2 -->
   </div>
 </template>
 
@@ -48,5 +49,8 @@ ul {
       width: 50%;
     }
   }
+}
+button {
+  padding: 0.3em 1em;
 }
 </style>

@@ -3,9 +3,14 @@
 
 <template>
   <main class="content-pane">
-    <Transition>
+    <!-- <Transition>
       <router-view />
-    </Transition>
+    </Transition> -->
+    <router-view v-slot="{ Component }">
+      <Transition>
+        <component :is="Component" />
+      </Transition>
+    </router-view>
 
     <div class="content">
     </div>
