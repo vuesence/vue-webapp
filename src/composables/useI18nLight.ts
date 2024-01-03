@@ -19,7 +19,7 @@ const locales: Locale[] = [
   },
 ];
 
-const locale: Ref<Locale> = ref();
+const locale: Ref<Locale> = ref(locales[0]);
 const messages: Record<string, object> = {
   en: enLocale,
   es: esLocale,

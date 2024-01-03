@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
+
 // i18n placeholder 1
 
 interface IOption {
