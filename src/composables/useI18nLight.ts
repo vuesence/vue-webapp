@@ -20,7 +20,7 @@ const locales: Locale[] = [
 ];
 
 const locale: Ref<Locale> = ref();
-const messages = {
+const messages: Record<string, object> = {
   en: enLocale,
   es: esLocale,
 };
@@ -38,14 +38,14 @@ export function useI18n() {
   }
 
   // It can load locales from remote server
-  async function setLocale(code) {
-    if (locale.value !== code) {
+  async function setLocale(code: string) {
+    if (locale.value.code !== code) {
       locale.value = locales.find(l => l.code === code);
       localStorage.setItem("vue-webapp_lang", locale.value.code);
     }
   }
 
-  function t(msg, params = null) {
+  function t(msg: string, params: Record<string, string> = null) {
     if (!msg || !locale.value) {
       return "";
     }
