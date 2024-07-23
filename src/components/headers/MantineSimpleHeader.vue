@@ -34,7 +34,7 @@ const links = [
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   position: sticky;
   display: flex;
@@ -46,10 +46,10 @@ const links = [
   z-index: 3;
   justify-content: space-between;
   border-bottom: 1px solid var(--vwa-c-divider);
-  // margin-bottom: 1em;
+  /* // margin-bottom: 1em; */
   .logo {
-    // height: 1.75rem;
-    // color: rgb(0, 0, 0);
+    /* // height: 1.75rem;
+    // color: rgb(0, 0, 0); */
     max-width: 200px;
     display: flex;
     align-items: center;

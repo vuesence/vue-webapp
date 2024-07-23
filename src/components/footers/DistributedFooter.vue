@@ -43,9 +43,9 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .footer {
-  // box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  /* // box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12); */
   border-top: 1px solid #999;
   box-sizing: border-box;
   width: 100%;
@@ -87,7 +87,7 @@
       display: inline-block;
       width: 35px;
       height: 35px;
-      // cursor: pointer;
+      /* cursor: pointer; */
       background-color: var(--vwa-c-bg-alt);
       border-radius: 2px;
       font-size: 20px;
@@ -112,15 +112,15 @@
     input {
       display: block;
       border-radius: 3px;
-      // box-sizing: border-box;
+      /* // box-sizing: border-box;
       // background-color: #d6d6d6;
       // box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-      // border: none;
+      // border: none; */
       resize: none;
       font: inherit;
-      // font-size: 14px;
+      /* // font-size: 14px; */
       font-weight: normal;
-      // color: #d1d2d2;
+      /* // color: #d1d2d2; */
       width: 400px;
       padding: 18px;
       height: 55px;
@@ -129,15 +129,15 @@
     textarea {
       display: block;
       border-radius: 3px;
-      // box-sizing: border-box;
-      // background-color: hsl(0, 0%, 84%);
+      /* // box-sizing: border-box;
+      // background-color: hsl(0, 0%, 84%); */
       box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-      // border: none;
+      /* // border: none; */
       resize: none;
       font: inherit;
       font-size: 14px;
       font-weight: normal;
-      // color: #d1d2d2;
+      /* // color: #d1d2d2; */
       width: 400px;
       padding: 18px;
       height: 100px;
@@ -146,8 +146,8 @@
     button {
       border-radius: 3px;
       background-color: var(--vwa-c-bg-alt);
-      // color: #555;
-      // border: 0;
+      /* // color: #555;
+      // border: 0; */
       padding: 15px 50px;
       font-weight: bold;
       float: right;

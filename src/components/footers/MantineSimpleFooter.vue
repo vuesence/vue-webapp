@@ -66,11 +66,11 @@ const socials = [
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .footer {
   margin-top: 1rem;
   border-top: 1px solid var(--vwa-c-border);
-  // .footer-inner {
+  /* // .footer-inner { */
   align-items: none;
   display: flex;
   justify-content: space-between;
@@ -78,8 +78,8 @@ const socials = [
   padding: 1em;
 
   .logo {
-    // height: 1.75rem;
-    // color: rgb(0, 0, 0);
+    /* // height: 1.75rem;
+    // color: rgb(0, 0, 0); */
     max-width: 200px;
     display: flex;
     align-items: center;
@@ -131,7 +131,7 @@ const socials = [
       color: var(--vwa-c-text-2);
       cursor: pointer;
       -webkit-tap-highlight-color: var(--vwa-c-bg);
-      // background-color: var(--vwa-c-bg);
+      /* // background-color: var(--vwa-c-bg); */
       padding: 7px;
       touch-action: manipulation;
 

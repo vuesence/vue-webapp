@@ -17,7 +17,7 @@
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .content-pane {
   padding: 1em 2em;
 }

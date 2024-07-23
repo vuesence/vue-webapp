@@ -16,7 +16,7 @@ const { isDrawerOpen } = useAppConfig();
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   position: sticky;
   display: flex;

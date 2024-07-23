@@ -5,7 +5,8 @@ const imageResources = new Map();
 
 function loadIcons() {
   let modules = import.meta.glob("@/assets/images/**/*.svg", {
-    as: "raw",
+    query: "?raw", 
+    import: "default",
     eager: true,
   });
   for (const fileName in modules) {
@@ -14,7 +15,8 @@ function loadIcons() {
   }
 
   modules = import.meta.glob("@/assets/images/**/*.png", {
-    as: "url",
+    query: "?url",
+    import: "default",
     eager: true,
   });
   // debugger;

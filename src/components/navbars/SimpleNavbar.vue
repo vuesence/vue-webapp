@@ -28,7 +28,7 @@ const links = [
   </nav>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 nav {
   min-width: 280px;
   .notebook & {

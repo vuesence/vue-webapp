@@ -68,17 +68,17 @@ const height = computed(() => {
   >
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 :deep(svg) {
   width: 100%;
   height: 100%;
 
   path {
-    // fill: currentColor;
+    /* // fill: currentColor; */
     stroke: currentColor;
     stroke-width: 1.5;
     fill: v-bind('props.fill');
-    // fill: v-bind('props.fill ?? "currentColor"');
+    /* // fill: v-bind('props.fill ?? "currentColor"'); */
   }
 }
 </style>

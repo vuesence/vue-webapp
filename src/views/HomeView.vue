@@ -33,7 +33,7 @@ const options: IOption[] = [];
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 ul {
   color: var(--vwa-c-text-2);
   border: 1px solid var(--vwa-c-divider);

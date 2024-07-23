@@ -22,24 +22,24 @@ const props = defineProps({
   </div>
 </template>
 
-<style lang="scss" scoped>
-// @import "@/assets/scss/variables.scss";
+<style scoped>
+/* // @import "@/assets/scss/variables.scss"; */
 .section-header-container {
   min-height: 100px;
   position: relative;
-  // transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* // transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); */
   overflow: hidden;
   width: 100%;
   display: block;
-  // padding-top: 3em;
-  // padding-bottom: 3em;
+  /* // padding-top: 3em;
+  // padding-bottom: 3em; */
   &:nth-child(n + 2) {
     margin-top: 5em;
   }
   .section-header {
     padding-bottom: 10px;
     width: 100%;
-    // transition: all 1s ease-in;
+    /* // transition: all 1s ease-in; */
     white-space: nowrap;
     display: flex;
     flex: 0 1 auto;
@@ -82,8 +82,8 @@ const props = defineProps({
       }
     }
     h2 {
-      font-family: $headerFont;
-      // font-weight: 500;
+      /* font-family: $headerFont; */
+      /* // font-weight: 500; */
       color: #555;
       font-size: 36px;
       color: #2a2a2a;

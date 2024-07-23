@@ -56,10 +56,10 @@ async function submitForm() {
   <!-- </div> -->
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .form-container {
   border-radius: 5px;
-  // background-color: #f2f2f2;
+  /* // background-color: #f2f2f2; */
   padding: 20px;
   text-align: left;
 
@@ -68,7 +68,7 @@ async function submitForm() {
   textarea {
     width: 100%;
     padding: 12px;
-    // border: 1px solid var(--vwa-c-border);
+    /* // border: 1px solid var(--vwa-c-border); */
     outline-color: var(--vwa-c-border-alt);
     border-radius: 4px;
     margin-top: 6px;
@@ -91,15 +91,15 @@ async function submitForm() {
     background-color: var(--vwa-c-brand-1);
     color: var(--vwa-c-bg-alt);
     padding: 10px 30px;
-    // border: none;
+    /* // border: none; */
     font-size: 1.1rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 
-    // &:hover {
+    /* // &:hover {
     //   background-color: #6e478e;
-    // }
+    // } */
 
     &[disabled] {
       opacity: 0.5;

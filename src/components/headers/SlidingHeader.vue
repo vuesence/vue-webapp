@@ -37,7 +37,7 @@ onUnmounted(() => {
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   position: sticky;
   z-index: 3;
@@ -54,7 +54,7 @@ onUnmounted(() => {
     background-color: var(--vwa-c-bg-soft);
     opacity: 0.8;
     height: 100px;
-    // just for the demo
+    /* // just for the demo */
     :deep(.header) {
       background-color: var(--vwa-c-bg-alt) !important;
     }

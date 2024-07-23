@@ -8,7 +8,7 @@
   </button>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .toggle {
   position: relative;
   border-radius: 11px;

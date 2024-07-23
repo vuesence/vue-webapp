@@ -100,12 +100,12 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .footer {
   display: flex;
   flex-flow: row wrap;
   padding: 30px 30px 20px 30px;
-  // color: #2f2f2f;
+  /* // color: #2f2f2f; */
   background-color: var(--vwa-c-bg-alt);
   border-top: 1px solid var(--vwa-c-border);
 
@@ -144,7 +144,7 @@
 }
 
 .footer__logo {
-  // font-family: 'Pacifico', cursive;
+  /* // font-family: 'Pacifico', cursive; */
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -161,13 +161,13 @@
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  // background-color: rgb(33, 33, 33, 0.07);
-  // border-radius: 100px;
+  /* // background-color: rgb(33, 33, 33, 0.07);
+  // border-radius: 100px; */
   color: var(--vwa-c-text-2);
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
-  // padding: 0 1.3em;
+  /* // padding: 0 1.3em; */
 }
 
 .footer__nav {
@@ -195,7 +195,7 @@
 .legal {
   display: flex;
   flex-wrap: wrap;
-  // color: #999;
+  /* // color: #999; */
 }
 
 .legal__links {
@@ -203,9 +203,9 @@
   align-items: center;
 }
 
-.heart {
+/* .heart {
   // color: #2f2f2f;
-}
+} */
 
 @media screen and (min-width: 24.375em) {
   .legal {

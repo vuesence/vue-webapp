@@ -56,7 +56,7 @@ const sublinks = [
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   position: sticky;
   display: flex;
@@ -69,10 +69,10 @@ const sublinks = [
   justify-content: space-between;
   border-bottom: 1px solid var(--vwa-c-border);
 
-  // margin-bottom: 1em;
+  /* // margin-bottom: 1em; */
   .logo {
-    // height: 1.75rem;
-    // color: rgb(0, 0, 0);
+    /* // height: 1.75rem;
+    // color: rgb(0, 0, 0); */
     max-width: 200px;
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@ const sublinks = [
       display: block;
       line-height: 1;
       padding: 8px 12px;
-      // border-radius: 4px;
+      /* // border-radius: 4px; */
       text-decoration: none;
       color: var(--vwa-c-text-2);
 

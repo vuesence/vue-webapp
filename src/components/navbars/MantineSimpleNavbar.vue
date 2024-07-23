@@ -45,7 +45,7 @@ const footerLinks = [
   </nav>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .navbar {
   min-width: 220px;
   padding: 1em;
@@ -65,7 +65,7 @@ const footerLinks = [
         display: flex;
         align-items: center;
         color: var(--vwa-c-text-2);
-        // border-bottom: solid 1px var(--vwa-c-divider);
+        /* // border-bottom: solid 1px var(--vwa-c-divider); */
         &:hover {
           color: var(--vwa-c-text-1);
           background-color: var(--vwa-c-bg-alt);
@@ -78,9 +78,9 @@ const footerLinks = [
           color: var(--vwa-c-text-2);
           text-wrap: nowrap;
         }
-        // .icon {
+        /* // .icon {
         //   color: var(--vwa-c-text-1)
-        // }
+        // } */
       }
 
     }
@@ -89,7 +89,7 @@ const footerLinks = [
     padding-bottom: 2em;
   }
   .footer {
-    // padding-top: 1em;
+    /* // padding-top: 1em; */
     margin-top: 1em;
     padding-top: 0.7rem;
     border-top: 1px solid var(--vwa-c-divider);

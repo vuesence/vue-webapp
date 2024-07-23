@@ -8,7 +8,7 @@ const modelValue = defineModel();
   </button>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 button {
   width: 2rem;
   height: 2rem;
@@ -18,7 +18,7 @@ button {
   background-color: transparent;
   .burger {
     display: block;
-    // outline: 0px solid transparent;
+    /* // outline: 0px solid transparent; */
     transition: all .3s ease;
     position: relative;
     width: 1.7rem;
