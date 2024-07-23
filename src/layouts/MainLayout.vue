@@ -46,7 +46,7 @@ const { isDrawerOpen } = useAppConfig();
   </div>
 </template>
 
-<style lang="scss">
+<style>
 .app {
   display: flex;
   flex-direction: column;

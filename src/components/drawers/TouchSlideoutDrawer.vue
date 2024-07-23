@@ -222,11 +222,11 @@ onUnmounted(() => {
   />
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .navigation-drawer {
   z-index: 9999;
   position: fixed;
-  // top: 0;
+  /* // top: 0; */
   left: 0;
   height: 100%;
   will-change: transform;
@@ -248,7 +248,7 @@ onUnmounted(() => {
     .notebook &,
     .desktop & {
       position: initial;
-      // background-color: white;
+      /* // background-color: white; */
       background-color: var(--vwa-sidebar-bg-color);
     }
     .touch-slideout-drawer {
@@ -256,7 +256,7 @@ onUnmounted(() => {
       overflow-y: overlay;
       height: 100%;
       width: 100%;
-      // background: hsl(2, 57%, 40%);
+      /* // background: hsl(2, 57%, 40%); */
     }
   }
 }
@@ -265,7 +265,7 @@ onUnmounted(() => {
   position: fixed;
   width: 100%;
   height: 100%;
-  // top: 0;
+  /* // top: 0; */
   left: 0;
   opacity: 0;
   will-change: opacity;

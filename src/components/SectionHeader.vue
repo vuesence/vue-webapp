@@ -23,7 +23,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-/* // @import "@/assets/scss/variables.scss"; */
 .section-header-container {
   min-height: 100px;
   position: relative;

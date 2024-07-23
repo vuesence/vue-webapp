@@ -3,8 +3,8 @@ import { createApp } from "vue";
 // import "./assets/styles/vars.css";
 // import "./styles/base.css";
 
-import "./assets/styles/base.scss";
-import "./assets/styles/custom.scss";
+import "./assets/styles/base.css";
+import "./assets/styles/custom.css";
 import App from "./App.vue";
 import { router } from "./router";
 import { loadIcons } from "@/utils/icons";

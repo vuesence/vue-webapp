@@ -17,5 +17,5 @@ useSplashScreen();
   <AppLayout />
 </template>
 
-<style lang="scss">
+<style>
 </style>
